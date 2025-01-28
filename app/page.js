@@ -9,78 +9,78 @@ export default function Home() {
     const loaderTimeline = gsap.timeline({
       onComplete: () => setLoading(false),
     });
-  
+
     loaderTimeline
       .fromTo(
         ".loader",
         { scaleY: 0, transformOrigin: "50% 100%" },
         {
           scaleY: 1,
-          duration: 1.8,
+          duration: 0.5,
           ease: "power2.inOut",
         }
       )
       .to(".loader", {
         scaleY: 0,
         transformOrigin: "0% -100%",
-        duration: 1.8,
+        duration: 0.5,
         ease: "power2.inOut",
       })
-      .to(".wrapper", { y: "-100%", ease: "power4.inOut", duration: 1.5 }, "-=1.2");
-  
+      .to(".wrapper", { y: "-100%", ease: "power4.inOut", duration: 1 }, "-=0.8");
+
     const textWrapper = document.querySelector(".animated-header");
     textWrapper.innerHTML = textWrapper.textContent.replace(
       /\S/g,
       "<span class='inline-block opacity-0'>$&</span>"
     );
-  
-    gsap.timeline({ delay: 3.5 })
+
+    gsap.timeline({ delay: 1.8 })
       .fromTo(
         ".animated-header span",
         { y: "100%", opacity: 0 },
         {
           y: "0%",
           opacity: 1,
-          duration: 2,
+          duration: 1,
           ease: "power2.out",
-          stagger: 0.07,
+          stagger: 0.05,
         }
       );
-  
+
     gsap.fromTo(
       ".action-buttons button",
       { y: 50, opacity: 0 },
       {
         y: 0,
         opacity: 1,
-        duration: 1.5,
+        duration: 1,
         ease: "power2.out",
-        stagger: 0.25,
-        delay: 4.5,
+        stagger: 0.2,
+        delay: 2.3,
       }
     );
-  
+
     gsap.fromTo(
       ".header-image",
       { x: -200, opacity: 0 },
-      { x: 0, opacity: 1, duration: 1.8, ease: "power2.out", delay: 3.8 }
+      { x: 0, opacity: 1, duration: 1.2, ease: "power2.out", delay: 1.5 }
     );
   }, []);
-  
 
   return (
     <>
-      {/* Loader */}
       {loading && (
         <div className="wrapper fixed inset-0 z-50 bg-black flex items-center justify-center">
-          <div className="loader w-[8%] h-[20vh] bg-white"></div>
+          <img
+            src="/logo.png"
+            alt="Logo"
+            className="w-[8%] h-[20vh] animate-pulse"
+          />
         </div>
       )}
 
-      {/* Main Section */}
       <section className={`transition-opacity duration-700 ${loading ? "opacity-0" : "opacity-100"}`}>
         <div className="max-w-[75%] mx-auto flex flex-row-reverse gap-3 items-center justify-between">
-          {/* Animated Image */}
           <div>
             <img
               src="/icon-header.png"
@@ -90,7 +90,6 @@ export default function Home() {
             />
           </div>
 
-          {/* Text Content */}
           <div>
             <div className="w-[85%]">
               <h2 className="animated-header text-4xl font-bold">
@@ -99,8 +98,6 @@ export default function Home() {
               <p className="mt-4 text-lg text-gray-300">
                 At Xtreme Verge, we deliver innovative software solutions tailored to meet your business needs.
               </p>
-
-              {/* Animated Buttons */}
               <div className="mt-6 space-x-4 action-buttons">
                 <Button className="bg-blue-600 hover:bg-blue-700">Get Started</Button>
                 <Button className="bg-gray-700 hover:bg-gray-800">Learn More</Button>
