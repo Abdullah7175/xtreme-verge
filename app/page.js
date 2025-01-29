@@ -95,12 +95,12 @@ export default function Home() {
               <h2 className="animated-header text-4xl font-bold">
                 Pushing Boundaries, Creating Futures
               </h2>
-              <p className="mt-4 text-lg text-gray-300">
+              <p className="mt-4 text-lg text-gray-500">
                 At Xtreme Verge, we deliver innovative software solutions tailored to meet your business needs.
               </p>
               <div className="mt-6 space-x-4 action-buttons">
-                <Button className="bg-blue-600 hover:bg-blue-700">Get Started</Button>
-                <Button className="bg-gray-700 hover:bg-gray-800">Learn More</Button>
+                <Button className="bg-blue-500 hover:bg-blue-700 text-gray-200">Get Started</Button>
+                <Button className="bg-gray-500 hover:bg-gray-600 text-gray-200">Learn More</Button>
               </div>
             </div>
           </div>
