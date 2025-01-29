@@ -21,7 +21,7 @@ const Navbar = () => {
   ];
   return (
     <header className="max-w-[80%] mx-auto mt-2 mb-3 flex px-3 text-white items-center justify-between">
-      <div className="logo"><img src="/logo-clean.png" alt="" width={70} height={90} /></div>
+      <div className="logo"><img src="/logob.png" alt="" width={70} height={90} /></div>
       <div onClick={showNavbar} className="flex cursor-pointer md:hidden">
         <Menu />
       </div>

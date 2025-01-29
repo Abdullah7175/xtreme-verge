@@ -6,7 +6,7 @@ const Footer = () => {
           <div className='max-w-[80%] mx-auto'>
             <div className='grid md:grid-cols-3 gap-4 mb-10 justify-center'>
                 <div>
-                    <div className="logo"><img src="/logo-clean.png" alt="" width={50}/></div>
+                    <div className="logo"><img src="/favicion.png" alt="" width={50}/></div>
                     <p>
                         Our solutions make production faster and cheaper. Contact us for more information.
                     </p>
