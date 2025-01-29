@@ -74,7 +74,7 @@ export default function Home() {
           <img
             src="/logo.png"
             alt="Logo"
-            className="w-[16%] h-[40vh] animate-pulse"
+            className="w-[20%] h-[40vh] animate-pulse"
           />
         </div>
       )}
