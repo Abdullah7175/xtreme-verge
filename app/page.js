@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { gsap } from "gsap";
 import { Button } from "@/components/ui/button";
+import Services from "@/components/Services";
 
 export default function Home() {
   const [loading, setLoading] = useState(true);
@@ -70,7 +71,7 @@ export default function Home() {
   return (
     <>
       {loading && (
-        <div className="wrapper fixed inset-0 z-50 bg-black flex items-center justify-center">
+        <div className="wrapper fixed inset-0 z-10 bg-black flex items-center justify-center">
           <img
             src="/logo.png"
             alt="Logo"
@@ -80,8 +81,8 @@ export default function Home() {
       )}
 
       <section className={`transition-opacity duration-700 ${loading ? "opacity-0" : "opacity-100"}`}>
-        <div className="max-w-[75%] mx-auto flex flex-row-reverse gap-3 items-center justify-between">
-          <div>
+        <div className="max-w-[75%] mx-auto flex flex-col md:flex-row-reverse gap-3 items-center justify-between">
+          <div className="">
             <img
               src="/icon-header.png"
               width={300}
@@ -106,6 +107,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <Services />
     </>
   );
 }
