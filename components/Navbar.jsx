@@ -24,7 +24,7 @@ const Navbar = () => {
   ];
 
   return (
-    <header className="max-w-[80%] mx-auto mt-2 mb-3 flex px-3 text-white items-center justify-between">
+    <header className="max-w-[80%] mx-auto mt-10 mb-3 flex px-3 text-white items-center justify-between">
       <div className="logo">
         <img src="/logob.png" alt="" width={70} height={90} />
       </div>

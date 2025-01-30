@@ -3,9 +3,11 @@ import React, { useEffect, useState } from "react";
 import { gsap } from "gsap";
 import { Button } from "@/components/ui/button";
 import Services from "@/components/Services";
+import DownArrow from "@/components/DownArrow";
 
 export default function Home() {
   const [loading, setLoading] = useState(true);
+
   useEffect(() => {
     const loaderTimeline = gsap.timeline({
       onComplete: () => setLoading(false),
@@ -15,11 +17,7 @@ export default function Home() {
       .fromTo(
         ".loader",
         { scaleY: 0, transformOrigin: "50% 100%" },
-        {
-          scaleY: 1,
-          duration: 0.5,
-          ease: "power2.inOut",
-        }
+        { scaleY: 1, duration: 0.5, ease: "power2.inOut" }
       )
       .to(".loader", {
         scaleY: 0,
@@ -27,7 +25,11 @@ export default function Home() {
         duration: 0.5,
         ease: "power2.inOut",
       })
-      .to(".wrapper", { y: "-100%", ease: "power4.inOut", duration: 1 }, "-=0.8");
+      .to(
+        ".wrapper",
+        { y: "-100%", ease: "power4.inOut", duration: 1 },
+        "-=0.8"
+      );
 
     const textWrapper = document.querySelector(".animated-header");
     textWrapper.innerHTML = textWrapper.textContent.replace(
@@ -35,29 +37,26 @@ export default function Home() {
       "<span class='inline-block opacity-0'>$&</span>"
     );
 
-    gsap.timeline({ delay: 1.8 })
+    gsap
+      .timeline({ delay: 1.8 })
       .fromTo(
         ".animated-header span",
         { y: "100%", opacity: 0 },
-        {
-          y: "0%",
-          opacity: 1,
-          duration: 1,
-          ease: "power2.out",
-          stagger: 0.05,
-        }
+        { y: "0%", opacity: 1, duration: 1, ease: "power2.out", stagger: 0.05 }
       );
 
     gsap.fromTo(
-      ".action-buttons button",
+      ".action-buttons-wrapper",
       { y: 50, opacity: 0 },
       {
         y: 0,
         opacity: 1,
         duration: 1,
         ease: "power2.out",
-        stagger: 0.2,
         delay: 2.3,
+        onComplete: () => {
+          gsap.set(".action-buttons button", { clearProps: "all" }); // Reset inline styles after animation
+        },
       }
     );
 
@@ -80,7 +79,11 @@ export default function Home() {
         </div>
       )}
 
-      <section className={`transition-opacity duration-700 ${loading ? "opacity-0" : "opacity-100"}`}>
+      <section
+        className={`transition-opacity duration-700 ${
+          loading ? "opacity-0" : "opacity-100"
+        } h-screen`}
+      >
         <div className="max-w-[75%] mx-auto flex flex-col md:flex-row-reverse gap-3 items-center justify-between">
           <div className="">
             <img
@@ -97,16 +100,32 @@ export default function Home() {
                 Pushing Boundaries, Creating Futures
               </h2>
               <p className="mt-4 text-lg text-gray-500">
-                At Xtreme Verge, we deliver innovative software solutions tailored to meet your business needs.
+                At Xtreme Verge, we deliver innovative software solutions
+                tailored to meet your business needs.
               </p>
-              <div className="mt-6 space-x-4 action-buttons">
-                <Button className="bg-blue-500 hover:bg-blue-700 text-gray-200">Get Started</Button>
-                <Button className="bg-gray-500 hover:bg-gray-600 text-gray-200">Learn More</Button>
+
+              <div className="mt-6 space-x-4 action-buttons-wrapper">
+                <div className="action-buttons flex gap-4">
+                  <Button className="">
+                    Get Started
+                  </Button>
+
+                  <button
+                    className="relative px-3 py-2 text-black border rounded-full border-red-200 font-base hover:-translate-y-1 transition-all duration-300 ease-in-out 
+                    hover:shadow-[inset_-3.6em_0_0_0_theme(colors.red.700),inset_3.5em_0_0_0_theme(colors.red.700)] 
+                    focus:shadow-[inset_-3.6em_0_0_0_theme(colors.red.700),inset_3.5em_0_0_0_theme(colors.red.700)] 
+                   hover:text-white"
+                  >
+                    Learn More
+                  </button>
+                </div>
               </div>
             </div>
           </div>
         </div>
+        <DownArrow />
       </section>
+
       <Services />
     </>
   );

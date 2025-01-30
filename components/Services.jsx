@@ -3,8 +3,7 @@ import React from "react";
 const Services = () => {
   return (
     <>
-      {/* Services Section */}
-      <section id="services" className="p-8 text-white">
+      <section id="services" className="p-8 text-black">
         <div className="max-w-6xl mx-auto">
           <h3 className="text-3xl font-bold text-center mb-6">Our Services</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -27,6 +26,7 @@ const Services = () => {
               </p>
             </div>
           </div>
+          
         </div>
       </section>
     </>
