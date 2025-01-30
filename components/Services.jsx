@@ -1,6 +1,19 @@
 import React from "react";
+import { Tilt } from 'react-tilt'
 
 const Services = () => {
+  const defaultOptions = {
+    reverse:        false,  // reverse the tilt direction
+    max:            35,     // max tilt rotation (degrees)
+    perspective:    1000,   // Transform perspective, the lower the more extreme the tilt gets.
+    scale:          1.1,    // 2 = 200%, 1.5 = 150%, etc..
+    speed:          1000,   // Speed of the enter/exit transition
+    transition:     true,   // Set a transition on enter/exit.
+    axis:           null,   // What axis should be disabled. Can be X or Y.
+    reset:          true,    // If the tilt effect has to be reset on exit.
+    easing:         "cubic-bezier(.03,.98,.52,.99)",    // Easing on enter/exit.
+  }
+  
   return (
     <>
       <section id="services" className="p-8 text-black">
@@ -19,14 +32,13 @@ const Services = () => {
                 Seamless user experiences for every platform.
               </p>
             </div>
-            <div className="p-4 bg-[#1a2d4e] text-white rounded-lg shadow-md">
+            <Tilt options={defaultOptions} className="p-4 bg-white text-black rounded-lg shadow-md hover:bg-red-700 hover:transition-all hover:ease-in-out hover:delay-45 hover:duration-45">
               <h4 className="text-xl font-bold">Cloud Solutions</h4>
               <p className="mt-2 text-gray-300">
                 Scalable and secure cloud-based infrastructure.
               </p>
-            </div>
+            </Tilt>
           </div>
-          
         </div>
       </section>
     </>

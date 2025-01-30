@@ -17,8 +17,8 @@ const DownArrow = () => {
   }, []);
 
   return (
-    <div className="max-w-[90%] flex justify-end items-center relative">
-    <div className="rounded-full border border-slate-400 absolute top-40">
+    <div className="max-w-[95%] flex justify-end items-center relative">
+    <div className="rounded-full border border-slate-400 fixed bottom-12 right-14">
     <ChevronDown 
         ref={arrowRef} 
         size={50} 
