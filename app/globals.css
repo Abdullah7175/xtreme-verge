@@ -19,3 +19,6 @@ body {
   background: var(--background);
   font-family: var(--font-roboto), Helvetica, sans-serif;
 }
+p,button{
+  font-family: var(--font-average);
+}

@@ -33,7 +33,7 @@ const Services = () => {
           </Tilt>
             <Tilt options={defaultOptions} className="p-4 bg-white border border-red-200 text-black rounded-lg shadow-md hover:bg-red-500 hover:transition-all hover:ease-in-out hover:delay-45 hover:duration-45">
               <h4 className="text-xl font-bold">Web & Mobile Apps</h4>
-              <p className="mt-2 text-gray-600">
+              <p className="mt-2  text-gray-600">
                 Seamless user experiences for every platform.
               </p>
           </Tilt>
