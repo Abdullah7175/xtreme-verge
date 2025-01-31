@@ -3,7 +3,8 @@ import React from "react";
 
 export default function AboutUs() {
   return (
-    <div className="bg-[#1a2d4e] text-white min-h-screen">
+    <div className="bg-[#1a2d4e] w-full">
+        <div className=" text-white min-h-screen max-w-[85%] mx-auto">
       <div className="container mx-auto px-6 py-12">
         <header className="text-center mb-12">
           <h1 className="text-4xl font-bold mb-4">About Us</h1>
@@ -71,6 +72,7 @@ export default function AboutUs() {
           </div>
         </section>
       </div>
+    </div>
     </div>
   );
 }
