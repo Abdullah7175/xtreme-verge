@@ -1,3 +1,4 @@
+'use client'
 import React from "react";
 import { Tilt } from 'react-tilt'
 
@@ -18,6 +19,7 @@ const Services = () => {
     <>
       <section id="services" className="p-8 text-black">
         <div className="max-w-6xl mx-auto">
+          <h2>Service</h2>
           <h3 className="text-3xl font-bold text-center mb-6">Our Services</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <Tilt options={defaultOptions} className="p-4 bg-white text-black rounded-lg shadow-md hover:bg-red-700 hover:transition-all hover:ease-in-out hover:delay-45 hover:duration-45">

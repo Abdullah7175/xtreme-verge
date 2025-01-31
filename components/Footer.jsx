@@ -2,7 +2,7 @@ import React from 'react'
 
 const Footer = () => {
     return (
-        <footer className='mb-5 p-10 bg-[#6e6e6e] text-white max-w-[85%] mx-auto rounded-2xl'>
+        <footer className='my-10 p-10 bg-[#6e6e6e] text-white max-w-[85%] mx-auto rounded-2xl'>
             <div className='grid md:grid-cols-3 gap-4 mb-10 justify-center'>
                 <div>
                     <div className="logo"><img src="/favicion.png" alt="" width={50}/></div>
