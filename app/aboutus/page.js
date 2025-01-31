@@ -1,4 +1,5 @@
-import React from 'react';
+// app/aboutus/page.js
+import React from "react";
 
 export default function AboutUs() {
   return (
@@ -15,7 +16,7 @@ export default function AboutUs() {
         <section className="grid md:grid-cols-2 gap-8 items-center">
           <div>
             <img
-              src="/images/about-us-team.jpg"
+              src="/logo2.jpg"
               alt="Our Team"
               className="rounded-xl shadow-lg w-full h-auto object-cover"
             />
@@ -69,12 +70,7 @@ export default function AboutUs() {
             ))}
           </div>
         </section>
-         {/* Footer Section */}
       </div>
-
-      <footer className="p-6 bg-[#1a2d4e] text-center">
-        <p className="text-gray-300">&copy; 2025 Xtreme Verge. All rights reserved.</p>
-      </footer>
     </div>
   );
 }
