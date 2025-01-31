@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { gsap } from "gsap";
 import { Button } from "@/components/ui/button";
 import Services from "@/components/Services";
-import DownArrow from "@/components/DownArrow";
+import { TypeAnimation } from "react-type-animation";
 
 export default function Home() {
   const [loading, setLoading] = useState(true);
@@ -96,17 +96,37 @@ export default function Home() {
 
           <div>
             <div className="w-[85%]">
-              <h2 className="animated-header text-4xl font-bold">
+              <h2 className="animated-header text-nowrap text-4xl font-bold">
                 Pushing Boundaries, Creating Futures
               </h2>
               <p className="mt-4 text-lg text-gray-500">
                 At Xtreme Verge, we deliver innovative software solutions
                 tailored to meet your business needs.
               </p>
+              <p className="mt-4 text-bold text-lg text-gray-500">
+              <TypeAnimation
+                  sequence={[
+                    "Transforming your vision into powerful software solutions.",
+                    3000, 
+                    "From custom applications to enterprise automation, we do it all...",
+                    3000,
+                    "Building high-performance web and mobile app...",
+                    3000,
+                    "Optimizing your infrastructure with cloud and DevOps solutions...",
+                    3000,
+                    "Enhancing user engagement with cutting-edge UI/UX design...",
+                    3000,
+                  ]}
+                  wrapper="span"
+                  speed={20}
+                  deletionSpeed={40}
+                  repeat={Infinity}
+                />
+              </p>
 
               <div className="mt-6 space-x-4 action-buttons-wrapper">
                 <div className="action-buttons flex gap-4">
-                <button
+                  <button
                     className="relative px-3 py-2 text-black border rounded-full border-blue-200 font-base hover:-translate-y-1 transition-all duration-300 ease-in-out 
                     hover:shadow-[inset_-3.6em_0_0_0_theme(colors.blue.700),inset_3.5em_0_0_0_theme(colors.blue.700)] 
                     focus:shadow-[inset_-3.6em_0_0_0_theme(colors.red.700),inset_3.5em_0_0_0_theme(colors.red.700)] 
@@ -128,7 +148,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <DownArrow />
+        {/* <DownArrow /> */}
       </section>
 
       <Services />

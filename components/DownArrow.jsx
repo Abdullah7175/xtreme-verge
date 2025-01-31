@@ -1,32 +1,32 @@
-"use client";
-import React, { useEffect, useRef } from "react";
-import { gsap } from "gsap";
-import { ChevronDown } from "lucide-react"; // Using Lucide Icons (or replace with an SVG)
+// "use client";
+// import React, { useEffect, useRef } from "react";
+// import { gsap } from "gsap";
+// import { ChevronDown } from "lucide-react"; // Using Lucide Icons (or replace with an SVG)
 
-const DownArrow = () => {
-  const arrowRef = useRef(null);
+// const DownArrow = () => {
+//   const arrowRef = useRef(null);
 
-  useEffect(() => {
-    gsap.to(arrowRef.current, {
-      y: 40, // Move down
-      repeat: -1, // Infinite loop
-      yoyo: true, // Reverse the animation
-      duration: 1, // Animation duration
-      ease: "power3.inOut",
-    });
-  }, []);
+//   useEffect(() => {
+//     gsap.to(arrowRef.current, {
+//       y: 40, // Move down
+//       repeat: -1, // Infinite loop
+//       yoyo: true, // Reverse the animation
+//       duration: 1, // Animation duration
+//       ease: "power3.inOut",
+//     });
+//   }, []);
 
-  return (
-    <div className="max-w-[95%] flex justify-end items-center relative">
-    <div className="rounded-full border border-slate-400 fixed bottom-12 right-14">
-    <ChevronDown 
-        ref={arrowRef} 
-        size={50} 
-        className="animate-bounce cursor-pointer" 
-      />
-    </div>
-    </div>
-  );
-};
+//   return (
+//     <div className="max-w-[95%] flex justify-end items-center relative">
+//     <div className="rounded-full border border-slate-400 fixed bottom-12 right-14">
+//     <ChevronDown 
+//         ref={arrowRef} 
+//         size={50} 
+//         className="animate-bounce cursor-pointer" 
+//       />
+//     </div>
+//     </div>
+//   );
+// };
 
-export default DownArrow;
+// export default DownArrow;
