@@ -88,7 +88,7 @@ export default function Home() {
           <div className="">
             <img
               src="/icon-header.png"
-              width={300}
+              width={400}
               alt="Xtreme Verge Logo"
               className="header-image mb-4"
             />
