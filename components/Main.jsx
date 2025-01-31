@@ -98,19 +98,19 @@ export default function Home() {
                 <TypeAnimation
                   sequence={[
                     "Transforming your vision into powerful software solutions.",
-                    3000,
+                    2000,
                     "From custom applications to enterprise automation, we do it all...",
-                    3000,
-                    "Building high-performance web and mobile app...",
-                    3000,
+                    2000,
+                    "Building high-performance web and mobile apps...",
+                    2000,
                     "Optimizing your infrastructure with cloud and DevOps solutions...",
-                    3000,
+                    2000,
                     "Enhancing user engagement with cutting-edge UI/UX design...",
-                    3000,
+                    2000,
                   ]}
                   wrapper="span"
-                  speed={20}
-                  deletionSpeed={40}
+                  speed={30}
+                  deletionSpeed={50}
                   repeat={Infinity}
                 />
               </p>

@@ -1,8 +1,12 @@
 'use client'
+import { useGSAP } from "@gsap/react";
 import React from "react";
 import { Tilt } from 'react-tilt'
 
 const Services = () => {
+  useGSAP(() => {
+    
+  });
   const defaultOptions = {
     reverse:        false,  // reverse the tilt direction
     max:            35,     // max tilt rotation (degrees)
@@ -14,7 +18,6 @@ const Services = () => {
     reset:          true,    // If the tilt effect has to be reset on exit.
     easing:         "cubic-bezier(.03,.98,.52,.99)",    // Easing on enter/exit.
   }
-  
   return (
     <>
       <section id="services" className="p-8 text-black">
