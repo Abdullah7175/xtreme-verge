@@ -60,11 +60,11 @@ export default function OurServices() {
   ];
 
   return (
-    <div className="bg-[#1a2d4e] text-white min-h-screen">
+    <div className="max-w-[75%] mx-auto flex flex-col md:flex-row-reverse gap-3 items-center justify-between">
       <div className="container mx-auto px-6 py-12">
         <header className="text-center mb-12">
           <h1 className="text-4xl font-bold mb-4">Our Services</h1>
-          <p className="text-lg text-gray-300 max-w-2xl mx-auto">
+          <p className="text-lg text-gray-500 max-w-2xl mx-auto">
             We offer a wide range of services to help your business grow and
             succeed in the digital world.
           </p>
