@@ -48,8 +48,8 @@ const GhostCursor = () => {
 
       const ghostRect = ghostRef.current.getBoundingClientRect();
       const ghostCenter = {
-        x: ghostRect.left + ghostRect.width / 2,
-        y: ghostRect.top + ghostRect.height / 2
+        x: ghostRect.left + ghostRect.width / 6,
+        y: ghostRect.top + ghostRect.height / 4
       };
 
       eyesRef.current.forEach(eye => {
@@ -59,8 +59,8 @@ const GhostCursor = () => {
         );
         
         gsap.to(eye, {
-          x: Math.cos(angle) * 4,
-          y: Math.sin(angle) * 4,
+          x: Math.cos(angle) * 6,
+          y: Math.sin(angle) * 6,
           duration: 0.3,
           ease: "power2.out"
         });
@@ -119,7 +119,7 @@ const GhostCursor = () => {
         {/* Ghost Body */}
         <div className="relative w-12 h-16 border-gray-300 rounded-t-full shadow-lg transition-all transform origin-bottom">
           {/* Eyes */}
-          <div className="absolute top-6 left-1 flex gap-4">
+          <div className="absolute top-6 left-0 flex gap-4">
             {[0, 1].map((i) => (
               <div key={i} className="w-4 h-2 bg-transparent overflow-hidden rounded-full">
                 <div
@@ -132,7 +132,7 @@ const GhostCursor = () => {
 
           {/* Mouth */}
           <div className="absolute top-12 left-1/2 transform -translate-x-1/2">
-            <div className={`w-4 h-2 bg-black rounded-full transition-all duration-300 ${
+            <div className={`w-2 h-2 bg-black rounded-full transition-all duration-300 ${
               hovering ? "scale-125" : "scale-100"
             }`} />
           </div>
