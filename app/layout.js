@@ -1,4 +1,5 @@
 import { Open_Sans } from "next/font/google";
+import { Average_Sans } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -12,6 +13,12 @@ const roboto = Open_Sans({
   weight:['300','400','500','600','700','800']
 });
 
+const Avg_sans = Average_Sans({
+  variable:"--font-average",
+  subsets: ["latin"],
+  weight:['400',]
+});
+
 
 export const metadata = {
   title: "Xtreme Verge",
@@ -22,7 +29,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${roboto.variable} ${roboto.variable} antialiased`}
+        className={`${roboto.variable} ${Avg_sans.variable} antialiased`}
       >
         <GhostCursor />
         <Navbar />
