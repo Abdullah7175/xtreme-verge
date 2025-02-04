@@ -75,7 +75,7 @@ export default function Home() {
           loading ? "opacity-0" : "opacity-100"
         } h-screen`}
       >
-        <div className="max-w-[75%] mx-auto flex flex-col md:flex-row-reverse gap-3 items-center justify-between">
+        <div className="max-w-[75%] m-20 mx-auto flex flex-col md:flex-row-reverse gap-3 items-center justify-between">
           <div className="">
             <img
               src="/icon-header.png"
