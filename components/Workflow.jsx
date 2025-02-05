@@ -33,7 +33,6 @@ const WorkFlow = () => {
   return (
     <section className="my-20 py-24 bg-blue-700 text-white relative">
       <div className="container mx-auto px-6 lg:px-20">
-        {/* Header */}
         <div className="text-center mb-16">
           <Fade direction="down" triggerOnce duration={1000}>
             <div className="inline-flex items-center gap-2 bg-transparent text-white px-4 py-1 rounded-full shadow-md">
@@ -45,10 +44,7 @@ const WorkFlow = () => {
             <h2 className="text-4xl font-bold mt-4">Our Development Workflow</h2>
           </Fade>
         </div>
-
-        {/* Content */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Right - Steps */}
           <div className="space-y-6">
             {Process.map((process, index) => (
               <div key={index} className="flex items-start gap-4 p-6 bg-white text-gray-900 shadow-md rounded-lg">
@@ -61,13 +57,13 @@ const WorkFlow = () => {
               </div>
             ))}
           </div>
-           <div className="relative">
+          <div className="flex justify-end relative">
             <Fade direction="right" triggerOnce duration={1200}>
-              <div className="relative w-full h-auto">
-                <Image className="animate-bounce" src="/illustration.png" alt="Illustration" width={500} height={500} />
+              <div className="relative w-full max-w-lg ml-auto">
+                <Image src="/illustration.png" alt="Illustration" width={500} height={500} className="w-full h-auto" />
               </div>
             </Fade>
-            <div className="absolute -z-10 -right-10 -bottom-10">
+            <div className="absolute -z-10 right-0 bottom-0 lg:-right-16 lg:-bottom-16">
               <Image src="/shape/pattern.png" alt="Pattern" width={300} height={300} />
             </div>
           </div>

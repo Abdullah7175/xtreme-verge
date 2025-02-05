@@ -3,6 +3,8 @@ import Whoarewe from "@/components/Whoarewe";
 import Main from "@/components/Main";
 import WorkFlow from "@/components/Workflow";
 import Services from "@/components/Services";
+import Counter from "@/components/Counter";
+import Slider from "@/components/Slider";
 
 
 export default function Home() {
@@ -13,7 +15,9 @@ export default function Home() {
       <Main/>
       <Whoarewe />
       <Services />
+      <Counter />
       <WorkFlow />
+      <Slider />
     </>
   );
 }

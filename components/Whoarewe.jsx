@@ -4,7 +4,7 @@ import { Fade } from "react-awesome-reveal";
 import Image from "next/image";
 import Link from "next/link";
 
-const Services = () => {
+const Whoarewe = () => {
   const ClickHandler = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
@@ -41,7 +41,7 @@ const Services = () => {
             <h2 className="text-3xl font-bold text-gray-900 mb-1 relative">
 
               Core Values
-              <div className="before:content-[''] before:absolute before:right-0 before:top-40 before:-translate-y-1/2 before:w-[2px] md:before:min-h-80 before:bg-[rgba(12,17,29,0.1)]"></div>
+              <div className="before:content-[''] before:absolute before:-right-7 before:top-40 before:-translate-y-1/2 before:w-[2px] md:before:min-h-80 before:bg-[rgba(12,17,29,0.1)]"></div>
             </h2>
               {[
                 {
@@ -128,4 +128,4 @@ const Services = () => {
   );
 };
 
-export default Services;
+export default Whoarewe;
