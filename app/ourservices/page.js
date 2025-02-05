@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { Tilt } from "react-tilt";
 import { FaCode, FaMobileAlt, FaCloud, FaCogs, FaChartLine, FaShieldAlt, FaDatabase, FaRobot } from "react-icons/fa";
-
+import { SiMediamarkt } from "react-icons/si";
 
 export default function OurServices() {
   const services = [
@@ -45,6 +45,11 @@ export default function OurServices() {
       title: "Database Management",
       description: "Efficient and reliable data storage solutions.",
       icon: <FaDatabase className="w-16 h-16 mb-4 text-indigo-500" />,
+    },
+    {
+      title: "Social Media",
+      description: "Efficient and reliable data storage solutions.",
+      icon: <SiMediamarkt className="w-16 h-16 mb-4 text-violet-500" />,
     },
   ];
 
