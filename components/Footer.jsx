@@ -13,7 +13,7 @@ const footer_data = {
   links: [
     { title: "HOME", link: "/" },
     { title: "ABOUT", link: "/aboutus" },
-    { title: "SERVICES", link: "/ourservice" },
+    { title: "SERVICES", link: "/ourservices" },
     { title: "PORTFOLIO", link: "/portfolio" },
     { title: "CONTACT US", link: "/contact" },
   ],
