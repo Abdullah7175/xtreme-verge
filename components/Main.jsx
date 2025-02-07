@@ -90,11 +90,11 @@ export default function Home() {
               <h2 className="animated-header text-nowrap text-4xl font-bold">
                 Pushing Boundaries, Creating Futures
               </h2>
-              <p className="mt-4 text-lg text-gray-500">
+              <p className="mt-4 text-lg">
                 At Xtreme Verge, we deliver innovative software solutions
                 tailored to meet your business needs.
               </p>
-              <p className="mt-4 text-bold text-lg text-gray-500">
+              <p className="mt-4 text-bold text-lg">
                 <TypeAnimation
                   sequence={[
                     "Transforming your vision into powerful software solutions.",

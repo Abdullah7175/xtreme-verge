@@ -3,7 +3,7 @@ import { Average_Sans } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import GhostCursor from "@/components/ghostcursor";
+import MouseFollower from "@/components/MouseFollower";
 
 
 
@@ -31,7 +31,7 @@ export default function RootLayout({ children }) {
       <body
         className={`${roboto.variable} ${Avg_sans.variable} antialiased`}
       >
-        <GhostCursor />
+        <MouseFollower />
         <Navbar />
         {children}
         <Footer />

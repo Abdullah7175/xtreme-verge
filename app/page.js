@@ -14,10 +14,9 @@ export default function Home() {
     <>
       <Main/>
       <Whoarewe />
-      <Services />
-      <Counter />
-      <WorkFlow />
       <Slider />
+      <WorkFlow />
+      <Counter />
     </>
   );
 }

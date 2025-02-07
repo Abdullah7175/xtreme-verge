@@ -10,7 +10,7 @@ const hero_link_home_three = [
   {
     id: 2,
     link: "https://www.linkedin.com",
-    title: "Linkedin",
+    title: "LinkedIn",
   },
   {
     id: 3,

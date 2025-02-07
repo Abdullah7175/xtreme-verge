@@ -31,7 +31,7 @@ const Process = [
 
 const WorkFlow = () => {
   return (
-    <section className="my-20 py-24 bg-blue-700 text-white relative">
+    <section className="py-24 bg-blue-700 text-white relative">
       <div className="container mx-auto px-6 lg:px-20">
         <div className="text-center mb-16">
           <Fade direction="down" triggerOnce duration={1000}>
@@ -60,7 +60,7 @@ const WorkFlow = () => {
           <div className="flex justify-end relative">
             <Fade direction="right" triggerOnce duration={1200}>
               <div className="relative w-full max-w-lg ml-auto">
-                <Image src="/illustration.png" alt="Illustration" width={500} height={500} className="w-full h-auto" />
+                <Image src="/illustration.png" alt="Illustration" width={500} height={500}/>
               </div>
             </Fade>
             <div className="absolute -z-10 right-0 bottom-0 lg:-right-16 lg:-bottom-16">

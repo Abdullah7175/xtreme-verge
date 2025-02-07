@@ -24,28 +24,24 @@ const counter_data = [
   },
 ];
 
-const Counter = ({ style_2, style_3 }) => {
+const Counter = ({}) => {
   return (
     <>
-      <div className="container mx-auto">
+      <div className="container mx-auto my-36">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 items-center">
           {counter_data.map((item, i) => (
             <div key={i} className="text-center">
               <div className="flex flex-col items-center">
                 <div
-                  className={`text-4xl font-bold ${
-                    style_2 ? "text-gray-900" : "text-gray-500"
-                  }`}
+                  className="text-8xl stroke"
                 >
-                  <div className="animate-count">
+                  <div className="animate-count inline-block">
                     <Count number={item.number} add_style={true} />
                   </div>
-                  {(i === 0 || i === 1) && <span>K</span>}
+                  {(i === 0 || i === 1) && <span className="text-8xl stroke">K</span>}
                 </div>
                 <p
-                  className={`text-lg font-medium ${
-                    style_2 ? "text-primary" : "text-gray-700"
-                  }`}
+                  className="text-3xl font-thin relative before:rounded-full before:bg-red-100 before:h-14 before:w-14 before:absolute before:-top-2 before:-left-5 before:-z-10"              
                 >
                   {item.title}
                 </p>
@@ -54,7 +50,6 @@ const Counter = ({ style_2, style_3 }) => {
           ))}
         </div>
       </div>
-      {!style_3 && <div className="h-36 md:h-16"></div>}
     </>
   );
 };
