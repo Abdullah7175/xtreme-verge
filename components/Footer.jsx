@@ -5,7 +5,7 @@ import { CopyRight, SocialLinks } from "@/components/SocialLinks";
 import { Mail, MapPin, Phone } from "lucide-react";
 
 const footer_data = {
-  email: "info@email.com",
+  email: "info@xv.com",
   phone: "(406) 555-0120",
   location: "46 JOHN ST TORONTO ON M5V 3W2",
   footer_info:
