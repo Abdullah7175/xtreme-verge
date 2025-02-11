@@ -1,138 +1,77 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Tilt } from "react-tilt";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 import { FaCode, FaMobileAlt, FaCloud, FaCogs, FaChartLine, FaShieldAlt, FaDatabase, FaRobot } from "react-icons/fa";
 import { FcClapperboard } from "react-icons/fc";
 
-export default function OurServices() {
+export default function Services() {
   const [hoveredIndex, setHoveredIndex] = useState(null);
+
   const services = [
-    {
-      title: "Custom Software Development",
-      description: "Tailored solutions to drive your business forward.",
-      icon: <FaCode className="w-16 h-16 mb-4 text-blue-500" />,
-    },
-    {
-      title: "Web & Mobile Apps",
-      description: "Seamless user experiences for every platform.",
-      icon: <FaMobileAlt className="w-16 h-16 mb-4 text-green-500" />,
-    },
-    {
-      title: "Cloud Solutions",
-      description: "Scalable and secure cloud-based infrastructure.",
-      icon: <FaCloud className="w-16 h-16 mb-4 text-purple-500" />,
-    },
-    {
-      title: "AI & Machine Learning",
-      description: "Intelligent systems to automate and optimize processes.",
-      icon: <FaRobot className="w-16 h-16 mb-4 text-orange-500" />,
-    },
-    {
-      title: "Data Analytics",
-      description: "Actionable insights from your business data.",
-      icon: <FaChartLine className="w-16 h-16 mb-4 text-red-500" />,
-    },
-    {
-      title: "Cybersecurity",
-      description: "Protect your business from digital threats.",
-      icon: <FaShieldAlt className="w-16 h-16 mb-4 text-yellow-500" />,
-    },
-    {
-      title: "DevOps & Automation",
-      description: "Streamline development and operations workflows.",
-      icon: <FaCogs className="w-16 h-16 mb-4 text-teal-500" />,
-    },
-    {
-      title: "Database Management",
-      description: "Efficient and reliable data storage solutions.",
-      icon: <FaDatabase className="w-16 h-16 mb-4 text-indigo-500" />,
-    },
-    {
-      title: "Social Media",
-      description: "Efficient and reliable data storage solutions.",
-      icon: <FcClapperboard className="w-16 h-16 mb-4 text-violet-500" />,
-    },
+    { title: "Custom Software Development", description: "Tailored solutions to drive your business forward.", icon: <FaCode />, gradient: "from-orange-400 to-red-500" },
+    { title: "Web & Mobile Apps", description: "Seamless user experiences for every platform.", icon: <FaMobileAlt />, gradient: "from-green-400 to-blue-500" },
+    { title: "Cloud Solutions", description: "Scalable and secure cloud-based infrastructure.", icon: <FaCloud />, gradient: "from-purple-400 to-pink-500" },
+    { title: "AI & Machine Learning", description: "Intelligent systems to automate and optimize processes.", icon: <FaRobot />, gradient: "from-yellow-400 to-orange-500" },
+    { title: "Data Analytics", description: "Actionable insights from your business data.", icon: <FaChartLine />, gradient: "from-red-400 to-purple-500" },
+    { title: "Cybersecurity", description: "Protect your business from digital threats.", icon: <FaShieldAlt />, gradient: "from-blue-400 to-indigo-500" },
+    { title: "DevOps & Automation", description: "Streamline development and operations workflows.", icon: <FaCogs />, gradient: "from-teal-400 to-green-500" },
+    { title: "Database Management", description: "Efficient and reliable data storage solutions.", icon: <FaDatabase />, gradient: "from-indigo-400 to-blue-500" },
+    { title: "Social Media", description: "Engage with your audience effectively.", icon: <FcClapperboard />, gradient: "from-pink-400 to-red-500" },
   ];
 
-//   return (
-//     <>     
-//     <div className="bg-[#1a2d4e] w-full">
-//         <div className=" text-white min-h-screen max-w-[85%] mx-auto">
-//           <div className="container mx-auto px-6 py-12">
-//             <header className="text-center mb-12">
-//               <h1 className="text-4xl font-bold mb-4">Our Services</h1>
-//               <p className="text-lg text-gray-300 max-w-2xl mx-auto">
-//                 We offer a wide range of services to help your business grow and
-//                 succeed in the digital world.
-//               </p>
-//             </header>
-
-//             <section className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-//               {services.map((service, index) => (
-//                 <Tilt
-//                   key={index}
-//                   options={{ max: 15, scale: 1.05, speed: 500 }}
-//                   className="p-6 bg-[#282c35] rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 hover:bg-[#3a3f4b]"
-//                 >
-//                   <div className="flex flex-col items-center text-center">
-//                     {service.icon}
-//                     <h2 className="text-2xl font-bold mb-4">{service.title}</h2>
-//                     <p className="text-gray-300">{service.description}</p>
-//                   </div>
-//                 </Tilt>
-//               ))}
-//             </section>
-//           </div>
-//         </div>
-//         </div>
-//     </>
-//   );
-// }
-return (
-  <div className="bg-[#1a2d4e] w-full">
-    <div className="text-white min-h-screen max-w-[85%] mx-auto">
-      <div className="container mx-auto px-6 py-12">
-        <header className="text-center mb-12">
+  return (
+    <div className="w-full py-12">
+      <div className="text-gray-900 max-w-[90%] mx-auto">
+        {/* Header Section */}
+        <header className="text-center mb-10">
           <h1 className="text-4xl font-bold mb-4">Our Services</h1>
-          <p className="text-lg text-gray-300 max-w-2xl mx-auto">
-            We offer a wide range of services to help your business grow and
-            succeed in the digital world.
-          </p>
         </header>
 
-        <section className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+        {/* Swiper Slider */}
+        <Swiper
+          modules={[Navigation, Pagination, Autoplay]}
+          slidesPerView={1}
+          spaceBetween={30}
+          breakpoints={{
+            640: { slidesPerView: 1 },
+            768: { slidesPerView: 2 },
+            1024: { slidesPerView: 3 },
+          }}
+          navigation
+          pagination={{ clickable: true }}
+          autoplay={{ delay: 3000, disableOnInteraction: false }}
+          className="pb-12"
+        >
           {services.map((service, index) => (
-            <Tilt
-              key={index}
-              options={{ max: 15, scale: 1.05, speed: 500 }}
-              className="p-6 bg-[#282c35] rounded-lg shadow-lg transition-all duration-300 relative overflow-hidden"
-              onMouseEnter={() => setHoveredIndex(index)}
-              onMouseLeave={() => setHoveredIndex(null)}
-            >
-              <div className="flex flex-col items-center text-center">
-                {/* Icon with slide-up animation */}
-                <div className={`transition-transform duration-300 
-                  ${hoveredIndex === index ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'}`}>
-                  {service.icon}
+            <SwiperSlide key={index}>
+              <Tilt
+                options={{ max: 15, scale: 1.05, speed: 500 }}
+                className={`h-[600px] p-6 rounded-lg shadow-lg transition-all duration-300 relative overflow-hidden bg-gradient-to-br ${service.gradient} bg-opacity-100`}
+                onMouseEnter={() => setHoveredIndex(index)}
+                onMouseLeave={() => setHoveredIndex(null)}
+              >
+                <div className="flex flex-col items-center text-center h-full justify-center">
+                  {/* Icon */}
+                  <div className={`text-6xl mb-4 transition-transform duration-300 ${hoveredIndex === index ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-80'}`}>
+                    {service.icon}
+                  </div>
+                  {/* Title */}
+                  <h2 className="text-2xl font-bold mb-2">{service.title}</h2>
+                  {/* Description */}
+                  <p className={`text-gray-700 transition-opacity duration-300 ${hoveredIndex === index ? 'opacity-100' : 'opacity-80'}`}>
+                    {service.description}
+                  </p>
                 </div>
-
-                {/* Title - always visible */}
-                <h2 className="text-2xl font-bold mb-4">{service.title}</h2>
-
-                {/* Description with fade-in animation */}
-                <p className={`text-gray-300 transition-opacity duration-300  
-                  ${hoveredIndex === index ? 'opacity-100' : 'opacity-0'}`}>
-                  {service.description}
-                </p>
-
-                {/* Background overlay animation */}
-                <div className={`absolute inset-0 bg-[#3a3f4b] transition-opacity duration-300 ${hoveredIndex === index ? 'opacity-100' : 'opacity-0'}`} />
-              </div>
-            </Tilt>
+              </Tilt>
+            </SwiperSlide>
           ))}
-        </section>
+        </Swiper>
       </div>
     </div>
-  </div>
-);
+  );
 }

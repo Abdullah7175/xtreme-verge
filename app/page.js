@@ -6,7 +6,6 @@ import Services from "@/components/Services";
 import Counter from "@/components/Counter";
 import Slider from "@/components/Slider";
 
-
 export default function Home() {
  
 
@@ -15,6 +14,7 @@ export default function Home() {
       <Main/>
       <Whoarewe />
       <Slider />
+      <Services/>
       <WorkFlow />
       <Counter />
     </>
