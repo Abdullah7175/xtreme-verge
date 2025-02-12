@@ -27,7 +27,7 @@ const counter_data = [
 const Counter = ({}) => {
   return (
     <>
-      <div className="container mx-auto my-36">
+      <div className="my-36">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 items-center">
           {counter_data.map((item, i) => (
             <div key={i} className="text-center">
