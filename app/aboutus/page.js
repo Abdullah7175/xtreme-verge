@@ -58,19 +58,19 @@ export default function AboutUs() {
           <div className="flex gap-10 items-center justify-center">
            <div className="relative">
            <div className="relative overflow-hidden rounded-xl before:absolute before:inset-0 before:pointer-events-none before:bg-[linear-gradient(180deg,rgba(12,17,29,0),rgba(12,17,29,0.69)_63.19%,#0c111d)] before:z-[1]">
-            <Image className="hover:scale-110 transition-all duration-100" src="/bg-1.jpg" width={400} height={400} alt="software"/>
+            <Image className="hover:scale-110 transition-all duration-300" src="/bg-1.jpg" width={400} height={400} alt="software"/>
           </div>
             <h2 className="text-center absolute text-white font-semibold left-5 text-3xl bottom-14 w-11/12 z-[2]">We don’t make empty promises</h2>
            </div>
            <div className="relative">
            <div className="relative overflow-hidden rounded-xl before:absolute before:inset-0 before:pointer-events-none before:bg-[linear-gradient(180deg,rgba(12,17,29,0),rgba(12,17,29,0.69)_63.19%,#0c111d)] before:z-[1]">
-            <Image className="hover:scale-110 transition-all duration-100" src="/bg-1.jpg" width={400} height={400} alt="software"/>
+            <Image className="hover:scale-110 transition-all duration-300" src="/bg-1.jpg" width={400} height={400} alt="software"/>
           </div>
             <h2 className="text-center absolute text-white font-semibold left-5 text-3xl bottom-14 w-11/12 z-[2]">We don’t make empty promises</h2>
            </div>
            <div className="relative">
            <div className="relative overflow-hidden rounded-xl before:absolute before:inset-0 before:pointer-events-none before:bg-[linear-gradient(180deg,rgba(12,17,29,0),rgba(12,17,29,0.69)_63.19%,#0c111d)] before:z-[1]">
-            <Image className="hover:scale-110 transition-all duration-100" src="/bg-1.jpg" width={400} height={400} alt="software"/>
+            <Image className="hover:scale-110 transition-all duration-300" src="/bg-1.jpg" width={400} height={400} alt="software"/>
           </div>
             <h2 className="text-center absolute text-white font-semibold left-5 text-3xl bottom-14 w-11/12 z-[2]">We don’t make empty promises</h2>
            </div>
