@@ -1,15 +1,17 @@
 "use client";
 import { useState, useRef, useEffect } from "react";
-import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { gsap } from "gsap";
-import { Menu, X } from "lucide-react";
+import { X } from "lucide-react";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const pathname = usePathname();
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isHidden, setIsHidden] = useState(false);
   const menuRef = useRef(null);
   const linksRef = useRef([]);
+  const navbarRef = useRef(null);
+  let lastScrollY = useRef(0);
 
   useEffect(() => {
     if (isOpen) {
@@ -30,34 +32,66 @@ const Navbar = () => {
     }
   }, [isOpen]);
 
+  // Hide navbar on scroll down, show on scroll up
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      if (currentScrollY > lastScrollY.current && currentScrollY > 5) {
+        setIsHidden(true); // Hide navbar when scrolling down
+      } else {
+        setIsHidden(false); // Show navbar when scrolling up
+      }
+
+      lastScrollY.current = currentScrollY;
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   const NavLinks = [
     { href: "/", text: "Home" },
     { href: "/aboutus", text: "About" },
-    { href: "/courses", text: "Courses" },
+    { href: "/ourservices", text: "Services" },
     { href: "/contact", text: "Contact" },
+    { href: "/portfolio", text: "Portfolio" },
   ];
 
   return (
     <>
-	<div className="max-w-[90%] mx-auto flex justify-between items-center">
-	  <div>
-	  <img src="/logob.png" alt="" width={70} height={90} />
-	  </div>
-	  <div></div>
-      <div className="cs_toolbox">
-        <span
-          className={`cs_icon_btn ${isOpen ? "active" : ""}`}
-          onClick={() => setIsOpen(!isOpen)}
-        >
-          <span className="cs_icon_btn_in">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-          </span>
-        </span>
-      </div>
-      <div
+      <header
+        ref={navbarRef}
+        className={`fixed top-0 left-0 w-full z-10 transition-transform duration-300 ${
+          isHidden ? "-translate-y-full" : "translate-y-0"
+        } ${isScrolled ? "bg-white shadow-lg" : "bg-white"}`}
+      >
+        <div className="max-w-[90%] mx-auto flex justify-between items-center py-4">
+          <div>
+            <img src="/logob.png" alt="Logo" width={70} height={90} />
+          </div>
+          <nav>
+            <ul className="flex gap-10 font-semibold">
+              {NavLinks.map((loop) => (
+                <li key={loop.href}>
+                  <Link href={loop.href} className="transition-colors">
+                    {loop.text}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+          <div className="cs_toolbox">
+            <span className="cs_icon_btn" onClick={() => setIsOpen(!isOpen)}>
+              <span className="cs_icon_btn_in">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+              </span>
+            </span>
+          </div>
+		  <div
         ref={menuRef}
         className="fixed inset-0 bg-black h-0 overflow-hidden flex flex-col items-center justify-center z-50 transition-all"
       >
@@ -89,7 +123,8 @@ const Navbar = () => {
           ))}
         </nav>
       </div>
-	</div>
+        </div>
+      </header>
     </>
   );
 };

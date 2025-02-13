@@ -25,7 +25,7 @@ export default function Services() {
   ];
 
   return (
-    <div className="w-full py-12">
+    <div className="w-full py-12 mt-20">
       <div className="text-gray-900 max-w-[90%] mx-auto">
         {/* Header Section */}
         <header className="text-center mb-10">
