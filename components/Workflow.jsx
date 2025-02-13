@@ -35,8 +35,8 @@ const Process = [
 
 const WorkFlow = () => {
   return (
-    <section className="py-24 bg-blue-700 text-white">
-      <div className="container mx-auto px-6 lg:px-20">
+    <section className="py-24 bg-blue-700 text-white ">
+      <div className="max-w-[85%] mx-auto px-6 lg:px-20">
         {/* Header Section */}
         <div className="text-center mb-16">
           <Fade direction="down" triggerOnce duration={1000}>

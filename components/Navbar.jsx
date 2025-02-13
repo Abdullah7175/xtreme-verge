@@ -31,16 +31,14 @@ const Navbar = () => {
       gsap.to(linksRef.current, { y: -20, opacity: 0, duration: 0.3 });
     }
   }, [isOpen]);
-
-  // Hide navbar on scroll down, show on scroll up
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
 
       if (currentScrollY > lastScrollY.current && currentScrollY > 5) {
-        setIsHidden(true); // Hide navbar when scrolling down
+        setIsHidden(true);
       } else {
-        setIsHidden(false); // Show navbar when scrolling up
+        setIsHidden(false);
       }
 
       lastScrollY.current = currentScrollY;
@@ -74,7 +72,7 @@ const Navbar = () => {
             <ul className="flex gap-10 font-semibold">
               {NavLinks.map((loop) => (
                 <li key={loop.href}>
-                  <Link href={loop.href} className="transition-colors">
+                  <Link href={loop.href} className="transition-colors hover:text-red-500">
                     {loop.text}
                   </Link>
                 </li>
@@ -115,7 +113,7 @@ const Navbar = () => {
               key={link.text}
               href={link.href}
               ref={(el) => (linksRef.current[index] = el)}
-              className={`text-5xl font-bold text-white opacity-0 transform -translate-y-5 transition-all duration-300 relative after:content-[attr(data-menu)] after:fixed after:left-1/2 after:top-1/2 after:-translate-x-[calc(50%+100px)] after:-translate-y-1/2 after:text-[200px] after:font-extrabold after:uppercase after:opacity-0 after:pointer-events-none hover:after:opacity-10 hover:after:-translate-x-1/2`}
+              className={`text-5xl font-bold hover:text-red-500 text-white opacity-0 transform -translate-y-5 transition-all duration-300 relative after:content-[attr(data-menu)] after:fixed after:left-1/2 after:top-1/2 after:-translate-x-[calc(50%+100px)] after:-translate-y-1/2 after:text-[200px] after:font-extrabold after:uppercase after:opacity-0 after:pointer-events-none hover:after:opacity-10 hover:after:-translate-x-1/2`}
               data-menu={link.text}
             >
               {link.text}

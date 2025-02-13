@@ -37,9 +37,8 @@ const Whoarewe = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           {/* Left Side - Core Values */}
           <div>
-            <div className="">
-            <h2 className="text-3xl font-bold text-gray-900 mb-1 relative">
-
+            <div >
+            <h2 className="text-3xl font-bold text-gray-900 ml-7 mb-1 relative">
               Core Values
               <div className="before:content-[''] before:absolute before:-right-7 before:top-40 before:-translate-y-1/2 before:w-[2px] md:before:min-h-80 before:bg-[rgba(12,17,29,0.1)]"></div>
             </h2>

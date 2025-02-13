@@ -21,7 +21,8 @@ const footer_data = {
 
 const Footer = () => {
   return (
-    <footer className="bg-black text-white mt-20 pt-14 font-bold">
+    <>
+    <footer className="bg-black text-white mt-20 pt-14 font-bold relative">
       <div className="h-36 md:h-16"></div>
       <div className=" max-w-[1320px] mx-auto px-4">
         <div className="flex flex-wrap justify-between">
@@ -80,6 +81,7 @@ const Footer = () => {
         </div>
       </div>
     </footer>
+    </>
   );
 };
 
