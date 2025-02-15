@@ -79,8 +79,6 @@ const Whoarewe = () => {
               ))}
             </div>
           </div>
-
-          {/* Right Side - Mission & Vision with Divider */}
           <div className="relative">
             <div className="hidden md:block absolute left-0 top-0 h-full w-0.5"></div>
             <div className="space-y-3 pl-6 md:pl-12">
@@ -104,8 +102,6 @@ const Whoarewe = () => {
             </div>
           </div>
         </div>
-
-        {/* Learn More Button */}
         <div className="text-center mt-16">
           <Fade direction="up" triggerOnce={false} duration={1500} delay={9}>
             <Link
