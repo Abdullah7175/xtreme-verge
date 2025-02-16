@@ -91,29 +91,28 @@ const Navbar = () => {
           </div>
 		  <div
         ref={menuRef}
-        className="fixed inset-0 bg-black h-0 overflow-hidden flex flex-col items-center justify-center z-50 transition-all"
+        className="fixed inset-0 bg-black overflow-hidden flex flex-col items-start justify-start z-50 transition-all"
       >
-        {/* Top Section with Logo & Close Button */}
-        <div className="w-full flex justify-between items-center px-10 py-6">
-          <h1 className="text-3xl font-extrabold text-red-600 opacity-0 transform -translate-x-8 transition-all duration-300">
-            LB.
-          </h1>
+        <div className="p-20 flex flex-row-reverse justify-between w-[90%] mx-auto">
+        <div>
           <button
             onClick={() => setIsOpen(false)}
-            className="text-black opacity-100 transform translate-x-8 transition-all duration-300"
+            className="text-black opacity-100 transform translate-x-8 transition-all duration-300 rounded-full border border-white p-1"
           >
-            <X />
+            <X color="white"/>
           </button>
         </div>
-
-        {/* Navigation Links */}
-        <nav className="flex flex-col items-center gap-6">
+        <div className="text-white">
+          <p>46 JOHN ST TORONTO ON
+          M5V 3W2</p>
+        </div>
+        <nav className="flex flex-col items-start gap-16 mt-10">
           {NavLinks.map((link, index) => (
             <Link
               key={link.text}
               href={link.href}
               ref={(el) => (linksRef.current[index] = el)}
-              className={`text-5xl font-bold hover:text-red-500 text-white opacity-0 transform -translate-y-5 transition-all duration-300 relative after:content-[attr(data-menu)] after:fixed after:left-1/2 after:top-1/2 after:-translate-x-[calc(50%+100px)] after:-translate-y-1/2 after:text-[200px] after:font-extrabold after:uppercase after:opacity-0 after:pointer-events-none hover:after:opacity-10 hover:after:-translate-x-1/2`}
+              className={`text-5xl font-extrabold uppercase hover:text-red-500 text-white opacity-0 transform -translate-y-5 transition-all duration-300 relative`}
               data-menu={link.text}
             >
               {link.text}
@@ -121,8 +120,10 @@ const Navbar = () => {
           ))}
         </nav>
       </div>
+      </div>
         </div>
       </header>
+      {/* after:content-[attr(data-menu)] after:fixed after:left-1/2 after:top-1/2 after:-translate-x-[calc(50%+100px)] after:-translate-y-1/2 after:text-[200px] after:font-extrabold after:uppercase after:opacity-0 after:pointer-events-none hover:after:opacity-10 hover:after:-translate-x-1/2 */}
     </>
   );
 };

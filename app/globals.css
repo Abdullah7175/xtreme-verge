@@ -81,7 +81,7 @@ p,button{
 .cs_icon_btn_in span {
   display: inline-block;
   position: absolute;
-  height: 3px;
+  height: 2px;
   width: 100%;
   background-color: currentColor;
   border-radius: 6px;
