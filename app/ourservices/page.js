@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Tilt } from "react-tilt";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
@@ -8,10 +8,37 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { FaCode, FaMobileAlt, FaCloud, FaCogs, FaChartLine, FaShieldAlt, FaDatabase, FaRobot } from "react-icons/fa";
 import { FcClapperboard } from "react-icons/fc";
+import gsap from "gsap";
+import Loader from "@/components/Loader";
 
 export default function Services() {
   const [hoveredIndex, setHoveredIndex] = useState(null);
+  const [loading, setLoading] = useState(true);
 
+  useEffect(() => {
+    const loaderTimeline = gsap.timeline({
+      onComplete: () => setLoading(false),
+    });
+
+    loaderTimeline
+      .fromTo(
+        ".loader",
+        { scaleY: 0, transformOrigin: "50% 100%" },
+        { scaleY: 1, duration: 0.5, ease: "power2.inOut" }
+      )
+      .to(".loader", {
+        scaleY: 0,
+        transformOrigin: "0% -100%",
+        duration: 0.5,
+        ease: "power2.inOut",
+      })
+      .to(
+        ".wrapper",
+        { y: "-100%", ease: "power4.inOut", duration: 1 },
+        "-=0.8"
+      );
+    
+  }, []);
   const services = [
     { title: "Custom Software Development", description: "Tailored solutions to drive your business forward.", icon: <FaCode />, gradient: "from-orange-400 to-red-500" },
     { title: "Web & Mobile Apps", description: "Seamless user experiences for every platform.", icon: <FaMobileAlt />, gradient: "from-green-400 to-blue-500" },
@@ -25,6 +52,8 @@ export default function Services() {
   ];
 
   return (
+    <>
+    {loading && <Loader />}
     <div className="w-full py-12 mt-20">
       <div className="text-gray-900 max-w-[90%] mx-auto">
         {/* Header Section */}
@@ -73,5 +102,6 @@ export default function Services() {
         </Swiper>
       </div>
     </div>
+    </>
   );
 }

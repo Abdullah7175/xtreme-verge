@@ -69,7 +69,7 @@ const Navbar = () => {
             <img src="/logob.png" alt="Logo" width={70} height={90} />
           </div>
           <nav>
-            <ul className="flex gap-10 font-semibold">
+            <ul className="flex gap-10 font-bold uppercase">
               {NavLinks.map((loop) => (
                 <li key={loop.href}>
                   <Link href={loop.href} className="transition-colors hover:text-red-500">
