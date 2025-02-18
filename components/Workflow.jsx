@@ -68,14 +68,14 @@ const WorkFlow = () => {
                   zIndex: index + 1,
                 }}
               >
-                <div className="mb-5 relative">
+                <div className="mb-5 relative flex justify-between items-center">
                   <Image
                     src={process.icon}
                     width={41}
                     height={41}
                     alt={process.title}
                   />
-                  <div className="flex items-center justify-center absolute top-[30px] right-[30px] w-[48px] h-[48px] bg-[rgba(15,83,220,0.1)] text-[#0c111d] text-[24px] font-medium rounded-full">
+                  <div className="flex items-center justify-center  top-[30px] right-[30px] w-[48px] h-[48px] bg-[rgba(15,83,220,0.1)] text-[#0c111d] text-[24px] font-medium rounded-full">
                     {process.id}
                   </div>
                 </div>
