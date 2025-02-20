@@ -2,7 +2,10 @@
 'use client'
 import Loader from "@/components/Loader";
 import gsap from "gsap";
+import { Locate, Mail, MapPin, Phone, SendIcon } from "lucide-react";
+import Image from "next/image";
 import React, { useEffect, useState } from "react";
+import { Fade } from "react-awesome-reveal";
 
 export default function ContactUs() {
   const [loading, setLoading] = useState(true);
@@ -31,89 +34,154 @@ export default function ContactUs() {
       );
 
     // Process the animated header text if it exists
-    
+
   }, []);
 
   return (
     <>
-    {loading && <Loader />}
-    <div className="bg-[#1a2d4e] w-full mt-20">
-        <div className=" text-white min-h-screen max-w-[85%] mx-auto">
-      <div className="container mx-auto px-6 py-12">
-        <header className="text-center mb-12">
-          <h1 className="text-4xl font-bold mb-4">Contact Us</h1>
-          <p className="text-lg text-gray-300 max-w-2xl mx-auto">
-            We'd love to hear from you! Reach out to us for any inquiries or collaborations.
-          </p>
-        </header>
+      {loading && <Loader />}
 
-        <section className="grid md:grid-cols-2 gap-8">
-          <div>
-            <h2 className="text-3xl font-bold mb-4">Get In Touch</h2>
-            <form className="space-y-4">
-              <div>
-                <label htmlFor="name" className="block text-sm font-medium text-gray-300">
-                  Name
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  className="mt-1 p-2 w-full rounded-md bg-[#282c35] text-white"
-                  placeholder="Your Name"
-                />
+      <div className="w-full mt-20 pt-2">
+        <div className=" text-black max-w-[85%] mx-auto overflow-x-hidden">
+          <div className="flex justify-between items-center gap-10">
+            <div className="w-1/2">
+              <div className="text-center flex py-1 mb-1">
+                <div className="inline-flex items-center gap-2 px-4 py-1 shadow-md rounded-full text-gray-700 text-sm font-medium">
+                  <Image
+                    src="/icon/user-icon.png"
+                    width={20}
+                    height={20}
+                    alt="Magic Icon"
+                  />
+                  Contact Us
+                </div>
               </div>
-              <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-300">
-                  Email
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  className="mt-1 p-2 w-full rounded-md bg-[#282c35] text-white"
-                  placeholder="Your Email"
-                />
-              </div>
-              <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-300">
-                  Message
-                </label>
-                <textarea
-                  id="message"
-                  rows="4"
-                  className="mt-1 p-2 w-full rounded-md bg-[#282c35] text-white"
-                  placeholder="Your Message"
-                />
-              </div>
-              <button
-                type="submit"
-                className="px-4 py-2 bg-red-500 text-white rounded-md hover:bg-red-600 transition-all"
-              >
-                Send Message
-              </button>
-            </form>
-          </div>
+              <Fade direction="up" triggerOnce duration={1500} delay={9}>
+              <h1 className="text-start text-8xl font-black mt-5 mb-10">Get in <br/>Touch</h1>
+              </Fade>
+              <Fade direction="left" triggerOnce duration={1500} delay={9}>
+              <form>
+                <div className="grid grid-cols-2 items-center gap-8 mt-10">
+                  <div className="relative">
+                    <input
+                      type="text"
+                      id="name"
+                      className="peer mt-1 p-2 w-full outline-none border-b-2 border-black placeholder-transparent focus:border-red-500"
+                      placeholder="Your Name"
+                      required
+                    />
+                    <label
+                      htmlFor="name"
+                      className="absolute left-0 top-0 text-lg text-black transition-all duration-150  peer-placeholder-shown:top-0 peer-placeholder-shown:text-black peer-placeholder-shown:text-lg peer-focus:-top-5 peer-focus:text-red-500 peer-focus:text-lg "
+                    >
+                      Name
+                    </label>
+                  </div>
 
-          <div>
-            <h2 className="text-3xl font-bold mb-4">Our Location</h2>
-            <div className="bg-[#282c35] p-6 rounded-lg shadow-lg">
-              <p className="text-gray-300 mb-4">
-                123 Tech Street, Innovation City, IC 12345
-              </p>
+                  <div className="relative">
+                    <input
+                      type="email"
+                      id="email"
+                      className="peer mt-1 p-2 w-full outline-none border-b-2 border-black placeholder-transparent focus:border-red-500"
+                      placeholder="Your Email"
+                    />
+                    <label htmlFor="email" className="absolute left-0 top-0 text-lg text-black transition-all duration-150  peer-placeholder-shown:top-0 peer-placeholder-shown:text-black peer-placeholder-shown:text-lg peer-focus:-top-5 peer-focus:text-red-500 peer-focus:text-lg">
+                      Email
+                    </label>
+                  </div>
+                  <div className="relative">
+                    <input
+                      type="text"
+                      id="name"
+                      className="peer mt-1 p-2 w-full outline-none border-b-2 border-black placeholder-transparent focus:border-red-500"
+                      placeholder="Your Name"
+                    />
+                    <label htmlFor="name" className="absolute left-0 top-0 text-lg text-black transition-all duration-150  peer-placeholder-shown:top-0 peer-placeholder-shown:text-black peer-placeholder-shown:text-lg peer-focus:-top-5 peer-focus:text-red-500 peer-focus:text-lg">
+                      Phone
+                    </label>
+                  </div>
+                  <div className="relative">
+                    <input
+                      type="text"
+                      id="subject"
+                      className="peer mt-1 p-2 w-full outline-none border-b-2 border-black placeholder-transparent focus:border-red-500"
+                      placeholder="Your Subject"
+                    />
+                    <label htmlFor="subject" className="absolute left-0 top-0 text-lg text-black transition-all duration-150  peer-placeholder-shown:top-0 peer-placeholder-shown:text-black peer-placeholder-shown:text-lg peer-focus:-top-5 peer-focus:text-red-500 peer-focus:text-lg">
+                      Subject
+                    </label>
+                  </div>
+                  <div className="col-span-2 relative my-8">
+                    <input
+                      type="text"
+                      id="message"
+                      className="peer mt-1 p-2 w-full outline-none border-b-2 border-black placeholder-transparent focus:border-red-500"
+                      placeholder="Your Subject"
+                    />
+                    <label htmlFor="message" className="absolute left-0 top-0 text-lg text-black transition-all duration-150  peer-placeholder-shown:top-0 peer-placeholder-shown:text-black peer-placeholder-shown:text-lg peer-focus:-top-5 peer-focus:text-red-500 peer-focus:text-lg">
+                      Message
+                    </label>
+                  </div>
+                  <div>
+                  </div>
+                  <Fade direction="up" triggerOnce duration={1500} delay={9}>
+                  <div className="flex items-end justify-end">
+                  <button
+                    type="submit"
+                    className="relative px-4 py-3 text-black text-lg border rounded border-red-200 font-bold 
+             hover:-translate-y-1 transition-all duration-300 ease-in-out 
+             hover:shadow-[inset_-7.5em_0_0_0_theme(colors.red.700),inset_7.5em_0_0_0_theme(colors.red.700)] 
+             focus:shadow-[inset_-7.5em_0_0_0_theme(colors.red.700),inset_7.5em_0_0_0_theme(colors.red.700)] 
+             hover:text-white 
+             inline-block"
+                  >
+                    Send Message
+                  </button>
+                  </div>
+                  </Fade>
+                </div>
+              </form>
+              </Fade>
+            </div>
+            <div className="w-1/2 mt-16">
+            <Fade direction="right" triggerOnce={false} duration={1500} delay={9}>
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.8354345093747!2d144.95373531531615!3d-37.816279742021665!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0xf577d6a32f7f1f8e!2sMelbourne%20VIC%2C%20Australia!5e0!3m2!1sen!2sus!4v1625063004479!5m2!1sen!2sus"
                 width="100%"
-                height="300"
+                height="500"
                 style={{ border: 0 }}
                 allowFullScreen
                 loading="lazy"
-                className="rounded-lg"
+                className=""
               />
+              <div className="grid grid-cols-3 mt-10">
+                <div>
+                <div className="rounded-full bg-black px-2 py-2 w-fit">
+                <MapPin color="white"/>
+                </div>
+                  <h1 className="font-bold text-xl">Address</h1>
+                  <p className="text-lg">El-Mahalla El-Kubra 37</p>
+                </div>
+                <div>
+                <div className="rounded-full bg-black px-2 py-2 w-fit">
+                <Phone color="white"/>
+                </div>
+                  <h1 className="font-bold text-xl">Phone</h1>
+                  <p className="text-lg">(406) 555-0120</p>
+                </div>
+                <div>
+                <div className="rounded-full bg-black px-2 py-2 w-fit">
+                <Mail color="white"/>
+                </div>
+                  <h1 className="font-bold text-xl">Email</h1>
+                  <p className="text-lg">info@xv.com</p>
+                </div>
+              </div>
+              </Fade>
             </div>
           </div>
-        </section>
+        </div>
       </div>
-    </div>
-    </div>
     </>
   );
 }
