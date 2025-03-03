@@ -7,7 +7,7 @@ const Subscribe = () => {
   }
   return (
    <>
-   <section className="relative bg-slate-400 overflow-hidden max-w-[85%] mx-auto py-14 my-10">
+   <section className="relative bg-black overflow-hidden max-w-[85%] mx-auto py-14 my-10">
         <div className="absolute top-10 left-10 pointer-events-none">
           <svg
             width="149"
@@ -58,7 +58,7 @@ const Subscribe = () => {
           {/* Section Heading */}
           <div className="text-center">
             <div className="mb-4">
-              <h2 className="text-5xl font-black text-black animate-textUpAndDowns">
+              <h2 className="text-5xl font-black text-white animate-textUpAndDowns">
                 Stay Ahead With Our Top Notch <br />Digital Services
               </h2>
             </div>
@@ -70,7 +70,7 @@ const Subscribe = () => {
               <input
                 type="text"
                 placeholder="Enter Your Email"
-                className=" placeholder:text-black w-full h-[80px] px-[30px] text-[18px] border border-black bg-transparent outline-none text-black focus:border-red-600"
+                className=" placeholder:text-white w-full h-[80px] px-[30px] text-[18px] border border-white bg-transparent outline-none text-white focus:border-red-600"
               />
               <button
                 type="submit"
@@ -85,7 +85,8 @@ const Subscribe = () => {
                 >
                   <path
                     d="M29.6063 0.212923C29.3188 0.00917327 28.9413 -0.0183267 28.6288 0.145423L0.503806 14.8329C0.171306 15.0067 -0.0249444 15.3617 0.0025556 15.7354C0.0313056 16.1104 0.280056 16.4304 0.633806 16.5517L8.45256 19.2242L25.1038 4.98667L12.2188 20.5104L25.3226 24.9892C25.4201 25.0217 25.5226 25.0392 25.6251 25.0392C25.7951 25.0392 25.9638 24.9929 26.1126 24.9029C26.3501 24.7579 26.5113 24.5142 26.5526 24.2404L29.9901 1.11542C30.0413 0.765423 29.8938 0.417923 29.6063 0.212923Z"
-                    fill="currentColor"
+                    fill="white"
+                    className='hover:fill-red-500'
                   />
                 </svg>
               </button>

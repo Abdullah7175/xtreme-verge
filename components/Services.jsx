@@ -51,7 +51,7 @@ export default function Services() {
             <SwiperSlide key={index} className="max-w-[350px] overflow-visible py-8">
               <Tilt
                 options={{ max: 15, scale: 1.05, speed: 500 }}
-                className={`h-[600px] p-6 rounded-lg shadow-lg transition-all duration-300 relative bg-gradient-to-br ${service.gradient} bg-opacity-100 hover:scale-110 hover:z-50`}
+                className={`h-[600px] p-6 rounded-lg shadow-lg transition-all duration-300 relative bg-gradient-to-br ${service.gradient} bg-opacity-100 hover:scale-110`}
                 onMouseEnter={() => setHoveredIndex(index)}
                 onMouseLeave={() => setHoveredIndex(null)}
               >

@@ -68,24 +68,38 @@ export default function Services() {
     // Extract gradient class from the original card
     const gradientClass = card.classList.value.split(" ").find(cls => cls.startsWith("from-"));
   
+    // Extract service details
+    const title = card.querySelector("h2")?.innerText || "";
+    const description = card.querySelector("p")?.innerText || "";
+    const iconHTML = card.querySelector("div.text-6xl")?.innerHTML || "";
+  
     cardClone.style.position = "fixed";
     cardClone.style.top = top + "px";
     cardClone.style.left = left + "px";
     cardClone.style.width = width + "px";
     cardClone.style.height = height + "px";
     card.style.opacity = "0";
-    
+  
     document.body.appendChild(cardClone);
   
     // Wait for expansion animation
     await toggleExpansion(cardClone, { top: "0px", left: "0px", width: "100vw", height: "100vh" });
   
-    // Apply dynamic gradient
+    // Apply dynamic gradient and styles
     cardClone.classList.add("bg-gradient-to-br", gradientClass);
     cardClone.style.zIndex = "50";
     cardClone.style.overflow = "auto";
-    cardClone.style.padding = "20px";
+    cardClone.style.padding = "40px";
     cardClone.style.borderRadius = "0px";
+  
+    // Clear old content and add new content
+    cardClone.innerHTML = `
+      <div class="flex flex-col items-center text-center h-full justify-center p-8">
+        <div class="text-7xl mb-6">${iconHTML}</div>
+        <h2 class="text-4xl font-bold mb-4">${title}</h2>
+        <p class="text-lg text-gray-200 max-w-2xl">${description}</p>
+      </div>
+    `;
   
     // Create and add close button
     const closeButton = document.createElement("button");
@@ -95,12 +109,12 @@ export default function Services() {
       z-index: 10000;
       top: 20px;
       right: 20px;
-      width: 35px;
-      height: 35px;
+      width: 40px;
+      height: 40px;
       border-radius: 50%;
-      background-color: #e25656;
+      background-color: black;
       color: white;
-      font-size: 18px;
+      font-size: 20px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -121,6 +135,7 @@ export default function Services() {
   
     cardClone.appendChild(closeButton);
   };
+  
   
   const services = [
     { title: "Custom Software Development", description: "Tailored solutions to drive your business forward.", icon: <FaCode />, gradient: "from-orange-400 to-red-500" },
@@ -145,8 +160,9 @@ export default function Services() {
           </header>
           <Swiper
             modules={[Navigation, Pagination, Autoplay]}
-            slidesPerView={1}
+            slidesPerView={3}
             spaceBetween={30}
+            autoplay={false}
             breakpoints={{
               640: { slidesPerView: 1 },
               768: { slidesPerView: 2 },
@@ -154,7 +170,6 @@ export default function Services() {
             }}
             navigation
             pagination={{ clickable: true }}
-            autoplay={{ delay: 3000, disableOnInteraction: false }}
             className="pb-12"
           >
             {services.map((service, index) => (

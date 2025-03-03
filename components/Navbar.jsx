@@ -1,23 +1,23 @@
 "use client";
 import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
-import { usePathname } from "next/navigation"; // ✅ Import usePathname
+import { usePathname } from "next/navigation";
 import { gsap } from "gsap";
 import { X } from "lucide-react";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [isHidden, setIsHidden] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false); // ✅ Track scroll for background change
   const menuRef = useRef(null);
   const linksRef = useRef([]);
-  let lastScrollY = useRef(0);
   const pathname = usePathname(); // ✅ Get current route
 
-  // ✅ Close menu on mount, rerenders, and route changes
+  // ✅ Close menu on route change
   useEffect(() => {
     setIsOpen(false);
-  }, [pathname]); // Close on navigation changes
+  }, [pathname]);
 
+  // ✅ GSAP animation for menu
   useEffect(() => {
     if (isOpen) {
       gsap.to(menuRef.current, {
@@ -37,15 +37,10 @@ const Navbar = () => {
     }
   }, [isOpen]);
 
+  // ✅ Track scroll position for background switch
   useEffect(() => {
     const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-      if (currentScrollY > lastScrollY.current && currentScrollY > 5) {
-        setIsHidden(true);
-      } else {
-        setIsHidden(false);
-      }
-      lastScrollY.current = currentScrollY;
+      setIsScrolled(window.scrollY > 80); // Change background after 50px scroll
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -63,11 +58,11 @@ const Navbar = () => {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 w-full z-10 transition-transform duration-300 ${
-          isHidden ? "-translate-y-full" : "translate-y-0"
-        } bg-white`}
+        className={`fixed top-0 left-0 w-full z-10 transition-all duration-300 ${
+          isScrolled ? "bg-white shadow-lg" : "bg-transparent"
+        }`}
       >
-        <div className="max-w-[90%] mx-auto flex justify-between items-center py-4">
+        <div className="max-w-[90%] mx-auto flex justify-between items-center py-4 transition-colors">
           <div>
             <img src="/logob.png" alt="Logo" width={70} height={90} />
           </div>
@@ -77,10 +72,16 @@ const Navbar = () => {
                 <li key={loop.href}>
                   <Link
                     href={loop.href}
-                    className={`transition-colors hover:text-red-500 ${
-                      pathname === loop.href ? "text-red-500" : "text-black"
+                    className={`transition-colors ${
+                      isScrolled
+                        ? pathname === loop.href
+                          ? "text-red-500"
+                          : "text-black"
+                        : pathname === loop.href
+                        ? "text-red-500"
+                        : "text-white"
                     }`}
-                    onClick={() => setIsOpen(false)} // ✅ Close on click
+                    onClick={() => setIsOpen(false)}
                   >
                     {loop.text}
                   </Link>
@@ -100,7 +101,7 @@ const Navbar = () => {
           </div>
           <div
             ref={menuRef}
-            className={`fixed inset-0 bg-black overflow-hidden flex flex-col items-start justify-start z-50 transition-all ${
+            className={`fixed inset-0 bg-black overflow-hidden flex flex-col items-start justify-start z-[1] transition-all ${
               isOpen ? "h-screen" : "h-0"
             }`}
           >
@@ -126,7 +127,7 @@ const Navbar = () => {
                       pathname === link.href ? "text-red-500" : "text-white"
                     }`}
                     data-menu={link.text}
-                    onClick={() => setIsOpen(false)} // ✅ Close menu on click
+                    onClick={() => setIsOpen(false)}
                   >
                     {link.text}
                   </Link>

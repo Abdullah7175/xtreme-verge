@@ -71,75 +71,58 @@ export default function Home() {
       {loading && <Loader />}  {/* Use the Loader component */}
 
       <section
-        className={`transition-opacity duration-700 ${
-          loading ? "opacity-0" : "opacity-100"
-        } h-screen`}
-      >
-        <div className="max-w-[75%] m-20 mx-auto flex flex-col md:flex-row-reverse gap-3 items-center justify-between">
-          <div className="">
-            <img
-              src="/icon-header.png"
-              width={400}
-              alt="Xtreme Verge Logo"
-              className="header-image mb-4"
-            />
-          </div>
+  className={`relative h-screen transition-opacity duration-700 ${
+    loading ? "opacity-0" : "opacity-100"
+  } bg-[url('https://devsaidul.com/html3/new/assets/images/home-1/banner.png')] bg-cover text-white flex justify-center items-center`}
+>
+  <div className="absolute inset-0 bg-black/50 z-0"></div>
 
-          <div>
-            <div className="w-[85%]">
-              <h2 className="animated-header text-nowrap text-4xl font-bold">
-                Pushing Boundaries, Creating Futures
-              </h2>
-              <p className="mt-4 text-lg">
-                At Xtreme Verge, we deliver innovative software solutions
-                tailored to meet your business needs.
-              </p>
-              <p className="mt-4 text-bold text-lg">
-                <TypeAnimation
-                  sequence={[
-                    "Transforming your vision into powerful software solutions.",
-                    2000,
-                    "From custom applications to enterprise automation, we do it all...",
-                    2000,
-                    "Building high-performance web and mobile apps...",
-                    2000,
-                    "Optimizing your infrastructure with cloud and DevOps solutions...",
-                    2000,
-                    "Enhancing user engagement with cutting-edge UI/UX design...",
-                    2000,
-                  ]}
-                  wrapper="span"
-                  speed={30}
-                  deletionSpeed={50}
-                  repeat={Infinity}
-                />
-              </p>
+  {/* Content (Ensures text and images are above overlay) */}
+  <div className="relative z-[1] max-w-[75%] m-20 mx-auto flex items-center justify-center text-center">
+    <div className="w-[85%]">
+      <h2 className="animated-header text-[8vh] font-bold">
+        Pushing Boundaries, Creating Futures
+      </h2>
+      <p className="mt-6 text-[3vh] ">
+        At Xtreme Verge, we deliver innovative software solutions
+        tailored to meet your business needs.
+      </p>
+      <p className="mt-6 text-[3vh]">
+        <TypeAnimation
+          sequence={[
+            "Transforming your vision into powerful software solutions.",
+            2000,
+            "From custom applications to enterprise automation, we do it all...",
+            2000,
+            "Building high-performance web and mobile apps...",
+            2000,
+            "Optimizing your infrastructure with cloud and DevOps solutions...",
+            2000,
+            "Enhancing user engagement with cutting-edge UI/UX design...",
+            2000,
+          ]}
+          wrapper="span"
+          speed={30}
+          deletionSpeed={50}
+          repeat={Infinity}
+        />
+      </p>
 
-              <div className="mt-6 space-x-4 action-buttons-wrapper">
-                <div className="action-buttons flex gap-4">
-                <button
-                    className="relative px-3 py-2 text-black border rounded border-blue-200 font-bold hover:-translate-y-1 transition-all duration-300 ease-in-out 
-                    hover:shadow-[inset_-3.6em_0_0_0_theme(colors.blue.700),inset_3.5em_0_0_0_theme(colors.blue.700)] 
-                    focus:shadow-[inset_-3.6em_0_0_0_theme(colors.red.700),inset_3.5em_0_0_0_theme(colors.red.700)] 
-                   hover:text-white"
-                  >
-                    Get started
-                  </button>
+      <div className="mt-14 space-x-4 action-buttons-wrapper flex items-center justify-center">
+        <div className="action-buttons flex gap-4">
+          <button className="relative px-3 py-2 text-white border rounded border-blue-200 font-bold hover:-translate-y-1 transition-all duration-300 ease-in-out hover:shadow-[inset_-3.6em_0_0_0_theme(colors.blue.700),inset_3.5em_0_0_0_theme(colors.blue.700)] focus:shadow-[inset_-3.6em_0_0_0_theme(colors.red.700),inset_3.5em_0_0_0_theme(colors.red.700)]">
+            Get started
+          </button>
 
-                  <button
-                    className="relative px-3 py-2 text-black border rounded border-red-200 font-bold hover:-translate-y-1 transition-all duration-300 ease-in-out 
-                    hover:shadow-[inset_-3.6em_0_0_0_theme(colors.red.700),inset_3.5em_0_0_0_theme(colors.red.700)] 
-                    focus:shadow-[inset_-3.6em_0_0_0_theme(colors.red.700),inset_3.5em_0_0_0_theme(colors.red.700)] 
-                   hover:text-white"
-                  >
-                    Learn More
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
+          <button className="relative px-3 py-2 text-white border rounded border-red-200 font-bold hover:-translate-y-1 transition-all duration-300 ease-in-out hover:shadow-[inset_-3.6em_0_0_0_theme(colors.red.700),inset_3.5em_0_0_0_theme(colors.red.700)] focus:shadow-[inset_-3.6em_0_0_0_theme(colors.red.700),inset_3.5em_0_0_0_theme(colors.red.700)]">
+            Learn More
+          </button>
         </div>
-      </section>
+      </div>
+    </div>
+  </div>
+</section>
+
     </>
   );
 }

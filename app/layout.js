@@ -1,4 +1,4 @@
-import { Open_Sans } from "next/font/google";
+import { Montserrat } from "next/font/google";
 import { Average_Sans } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
@@ -7,7 +7,7 @@ import MouseFollower from "@/components/MouseFollower";
 
 
 
-const roboto = Open_Sans({
+const roboto = Montserrat({
   variable:"--font-roboto",
   subsets: ["latin"],
   weight:['300','400','500','600','700','800']

@@ -56,15 +56,13 @@ const WorkFlow = () => {
           </Fade>
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-          {/* Added pb-[300px] for enough room for sticky behavior */}
-          <div className="relative space-y-8 pb-[200px]">
+          <div className="sticky space-y-8 pb-[200px]">
             {Process.map((process, index) => (
               <div
                 key={index}
                 className="bg-white text-gray-900 border border-blue-600 rounded-[20px] shadow-lg p-[40px_30px] max-w-[450px] min-h-[236px] sticky"
                 style={{
-                  top: `${25 + index * 60}px`,
-                  // Reversed z-index so later cards (with higher index) stack on top
+                  top: `calc(var(--navbar-height) + ${index * 60}px)`,
                   zIndex: index + 1,
                 }}
               >

@@ -1,4 +1,3 @@
-// app/contact/page.js
 'use client'
 import Loader from "@/components/Loader";
 import gsap from "gsap";
@@ -56,10 +55,10 @@ export default function ContactUs() {
                   Contact Us
                 </div>
               </div>
-              <Fade direction="up" triggerOnce duration={1500} delay={9}>
+              <Fade direction="up" triggerOnce duration={1500} delay={2}>
               <h1 className="text-start text-8xl font-black mt-5 mb-10">Get in <br/>Touch</h1>
               </Fade>
-              <Fade direction="left" triggerOnce duration={1500} delay={9}>
+              <Fade direction="left" triggerOnce duration={1500} delay={3}>
               <form>
                 <div className="grid grid-cols-2 items-center gap-8 mt-10">
                   <div className="relative">
@@ -144,7 +143,7 @@ export default function ContactUs() {
               </Fade>
             </div>
             <div className="w-1/2 mt-16">
-            <Fade direction="right" triggerOnce={false} duration={1500} delay={9}>
+            <Fade direction="right" triggerOnce={false} duration={1500} delay={3}>
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.8354345093747!2d144.95373531531615!3d-37.816279742021665!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0xf577d6a32f7f1f8e!2sMelbourne%20VIC%2C%20Australia!5e0!3m2!1sen!2sus!4v1625063004479!5m2!1sen!2sus"
                 width="100%"
