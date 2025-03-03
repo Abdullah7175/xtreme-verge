@@ -31,8 +31,13 @@ body {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-8px); }
 }
-p,button{
+pbutton{
   font-family: var(--font-average);
+  font-weight:200;
+}
+button{
+  font-family: var(--font-average);
+  font-weight:600;
 }
 .stroke {
   font-size: 100px;

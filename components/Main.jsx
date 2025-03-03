@@ -83,9 +83,9 @@ export default function Home() {
       <h2 className="animated-header text-[8vh] font-bold">
         Pushing Boundaries, Creating Futures
       </h2>
-      <p className="mt-6 text-[3vh] ">
+      <p className="mt-6 text-[3.5vh] ">
         At Xtreme Verge, we deliver innovative software solutions
-        tailored to meet your business needs.
+        tailored to<br/> meet your business needs.
       </p>
       <p className="mt-6 text-[3vh]">
         <TypeAnimation

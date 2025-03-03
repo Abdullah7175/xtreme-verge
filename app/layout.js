@@ -1,5 +1,5 @@
 import { Montserrat } from "next/font/google";
-import { Average_Sans } from "next/font/google";
+import { Barlow_Condensed } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -13,10 +13,10 @@ const roboto = Montserrat({
   weight:['300','400','500','600','700','800']
 });
 
-const Avg_sans = Average_Sans({
+const Avg_sans = Barlow_Condensed({
   variable:"--font-average",
-  subsets: ["latin"],
-  weight:['400',]
+  subsets:['latin'],
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
 });
 
 
