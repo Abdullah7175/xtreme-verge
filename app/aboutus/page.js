@@ -76,7 +76,7 @@ export default function AboutUs() {
       {loading && <Loader />}  {/* Use the Loader component */}
 
       <section
-        className={`relative h-screen transition-opacity duration-700 bg-[url('https://devsaidul.com/html3/new/assets/images/home-1/banner.png')] bg-cover text-white flex justify-center items-center`}
+        className={`relative h-screen transition-opacity duration-700 bg-[url('https://img.freepik.com/free-photo/business-people-meeting_53876-15178.jpg?t=st=1741126596~exp=1741130196~hmac=0b64e66389abb7b7e2565cf4f6c13fe3f7ad640394cefec302009c315647e3f8&w=1380')] bg-cover text-white flex justify-center items-center`}
       >
         <div className="absolute inset-0 bg-black/50 z-0"></div>
 
@@ -84,23 +84,12 @@ export default function AboutUs() {
         <div className="relative z-[1] max-w-[75%] m-20 mx-auto flex items-center justify-center text-center">
           <div className="w-[85%]">
             <h2 className="text-[8vh] font-bold">
-              About Xtreme Verge
+              About Us
             </h2>
             <p className="mt-6 text-[3.5vh] ">
               At Xtreme Verge, we deliver innovative software solutions
               tailored to<br /> meet your business needs.
             </p>
-            <div className="mt-14 space-x-4 action-buttons-wrapper flex items-center justify-center">
-              <div className="action-buttons flex gap-4">
-                <button className="relative px-3 py-2 text-xl text-white border rounded border-blue-200 font-bold hover:-translate-y-1 transition-all duration-300 ease-in-out hover:shadow-[inset_-3.6em_0_0_0_theme(colors.blue.700),inset_3.5em_0_0_0_theme(colors.blue.700)] focus:shadow-[inset_-3.6em_0_0_0_theme(colors.red.700),inset_3.5em_0_0_0_theme(colors.red.700)]">
-                  Get started
-                </button>
-
-                <button className="relative px-3 py-2 text-xl text-white border rounded border-red-200 font-bold hover:-translate-y-1 transition-all duration-300 ease-in-out hover:shadow-[inset_-3.6em_0_0_0_theme(colors.red.700),inset_3.5em_0_0_0_theme(colors.red.700)] focus:shadow-[inset_-3.6em_0_0_0_theme(colors.red.700),inset_3.5em_0_0_0_theme(colors.red.700)]">
-                  Learn More
-                </button>
-              </div>
-            </div>
           </div>
         </div>
       </section>

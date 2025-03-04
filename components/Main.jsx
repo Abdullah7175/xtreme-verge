@@ -3,6 +3,8 @@ import React, { useEffect, useState } from "react";
 import { gsap } from "gsap";
 import { TypeAnimation } from "react-type-animation";
 import Loader from "@/components/Loader";
+import { Fade } from "react-awesome-reveal";
+import Link from "next/link";
 
 export default function Home() {
   const [loading, setLoading] = useState(true);
@@ -108,17 +110,21 @@ export default function Home() {
         />
       </p>
 
-      <div className="mt-14 space-x-4 action-buttons-wrapper flex items-center justify-center">
-        <div className="action-buttons flex gap-4">
-          <button className="relative px-3 py-2 text-xl text-white border rounded border-blue-200 font-bold hover:-translate-y-1 transition-all duration-300 ease-in-out hover:shadow-[inset_-3.6em_0_0_0_theme(colors.blue.700),inset_3.5em_0_0_0_theme(colors.blue.700)] focus:shadow-[inset_-3.6em_0_0_0_theme(colors.red.700),inset_3.5em_0_0_0_theme(colors.red.700)]">
-            Get started
-          </button>
-
-          <button className="relative px-3 py-2 text-xl text-white border rounded border-red-200 font-bold hover:-translate-y-1 transition-all duration-300 ease-in-out hover:shadow-[inset_-3.6em_0_0_0_theme(colors.red.700),inset_3.5em_0_0_0_theme(colors.red.700)] focus:shadow-[inset_-3.6em_0_0_0_theme(colors.red.700),inset_3.5em_0_0_0_theme(colors.red.700)]">
-            Learn More
-          </button>
+      <div className="text-center mt-16">
+          <Fade direction="up" triggerOnce duration={1500} delay={9}>
+            <Link
+              href="/aboutus"
+              className="relative px-3 py-2 border rounded border-red-200 font-bold 
+             hover:-translate-y-1 transition-all duration-300 ease-in-out 
+             hover:shadow-[inset_-5em_0_0_0_theme(colors.red.700),inset_4.5em_0_0_0_theme(colors.red.700)] 
+             focus:shadow-[inset_-5em_0_0_0_theme(colors.red.700),inset_4.5em_0_0_0_theme(colors.red.700)] 
+             hover:border-none 
+             inline-block"
+            >
+              Get to know us
+            </Link>
+          </Fade>
         </div>
-      </div>
     </div>
   </div>
 </section>

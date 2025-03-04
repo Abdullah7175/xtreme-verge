@@ -16,7 +16,7 @@ const Whoarewe = () => {
     >
       <div className="container mx-auto">
         {/* Centered Title */}
-        <div className="text-center mb-12">
+        <div className="text-center mb-8">
           <div className="inline-flex items-center gap-2 px-4 py-1 shadow-md rounded-full text-gray-700 text-sm font-medium">
             <Image
               src="/icon/magic.png"
@@ -26,7 +26,7 @@ const Whoarewe = () => {
             />
             Who We are ?
           </div>
-          <Fade direction="down" triggerOnce={false} duration={1000} delay={9}>
+          <Fade direction="down" triggerOnce duration={1000} delay={9}>
             <h2 className="text-4xl font-extrabold text-gray-900 mt-4">
               Committed to Your Online Success
             </h2>
@@ -101,22 +101,6 @@ const Whoarewe = () => {
               ))}
             </div>
           </div>
-        </div>
-        <div className="text-center mt-16">
-          <Fade direction="up" triggerOnce={false} duration={1500} delay={9}>
-            <Link
-              onClick={ClickHandler}
-              href="/about"
-              className="relative px-3 py-2 text-black border rounded border-red-200 font-bold 
-             hover:-translate-y-1 transition-all duration-300 ease-in-out 
-             hover:shadow-[inset_-5em_0_0_0_theme(colors.red.700),inset_4.5em_0_0_0_theme(colors.red.700)] 
-             focus:shadow-[inset_-5em_0_0_0_theme(colors.red.700),inset_4.5em_0_0_0_theme(colors.red.700)] 
-             hover:text-white 
-             inline-block"
-            >
-              Get to know us
-            </Link>
-          </Fade>
         </div>
       </div>
     </section>

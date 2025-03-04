@@ -40,7 +40,7 @@ export default function ContactUs() {
     <>
       {loading && <Loader />}
       <section
-        className={`relative h-screen transition-opacity duration-700 bg-[url('https://devsaidul.com/html3/new/assets/images/home-1/banner.png')] bg-cover text-white flex justify-center items-center`}
+        className={`relative h-screen transition-opacity duration-700 bg-[url('https://img.freepik.com/free-photo/office-desktop-with-laptop-business-man_23-2148174087.jpg?t=st=1741126963~exp=1741130563~hmac=83b273f4e0a8e302fadd771bf856de60933d78b1892a763dae9b761bc9f56961&w=1380')] bg-cover text-white flex justify-center items-center`}
       >
         <div className="absolute inset-0 bg-black/50 z-0"></div>
 
@@ -54,17 +54,6 @@ export default function ContactUs() {
               At Xtreme Verge, we deliver innovative software solutions
               tailored to<br /> meet your business needs.
             </p>
-            <div className="mt-14 space-x-4 action-buttons-wrapper flex items-center justify-center">
-              <div className="action-buttons flex gap-4">
-                <button className="relative px-3 py-2 text-xl text-white border rounded border-blue-200 font-bold hover:-translate-y-1 transition-all duration-300 ease-in-out hover:shadow-[inset_-3.6em_0_0_0_theme(colors.blue.700),inset_3.5em_0_0_0_theme(colors.blue.700)] focus:shadow-[inset_-3.6em_0_0_0_theme(colors.red.700),inset_3.5em_0_0_0_theme(colors.red.700)]">
-                  Get started
-                </button>
-
-                <button className="relative px-3 py-2 text-xl text-white border rounded border-red-200 font-bold hover:-translate-y-1 transition-all duration-300 ease-in-out hover:shadow-[inset_-3.6em_0_0_0_theme(colors.red.700),inset_3.5em_0_0_0_theme(colors.red.700)] focus:shadow-[inset_-3.6em_0_0_0_theme(colors.red.700),inset_3.5em_0_0_0_theme(colors.red.700)]">
-                  Learn More
-                </button>
-              </div>
-            </div>
           </div>
         </div>
       </section>
@@ -172,7 +161,7 @@ export default function ContactUs() {
               </Fade>
             </div>
             <div className="w-1/2 mt-16">
-            <Fade direction="right" triggerOnce={false} duration={1500} delay={3}>
+            <Fade direction="right" triggerOnce duration={1500} delay={3}>
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.8354345093747!2d144.95373531531615!3d-37.816279742021665!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0xf577d6a32f7f1f8e!2sMelbourne%20VIC%2C%20Australia!5e0!3m2!1sen!2sus!4v1625063004479!5m2!1sen!2sus"
                 width="100%"
