@@ -16,7 +16,7 @@ import Subscribe from "@/components/Subscribe";
 
 export default function AboutUs() {
   const [loading, setLoading] = useState(true);
-  
+
   const testimonial_data = [
     {
       img: avatar_img,
@@ -73,9 +73,39 @@ export default function AboutUs() {
 
   return (
     <>
-      {loading && <Loader />}
+      {loading && <Loader />}  {/* Use the Loader component */}
+
+      <section
+        className={`relative h-screen transition-opacity duration-700 bg-[url('https://devsaidul.com/html3/new/assets/images/home-1/banner.png')] bg-cover text-white flex justify-center items-center`}
+      >
+        <div className="absolute inset-0 bg-black/50 z-0"></div>
+
+        {/* Content (Ensures text and images are above overlay) */}
+        <div className="relative z-[1] max-w-[75%] m-20 mx-auto flex items-center justify-center text-center">
+          <div className="w-[85%]">
+            <h2 className="text-[8vh] font-bold">
+              About Xtreme Verge
+            </h2>
+            <p className="mt-6 text-[3.5vh] ">
+              At Xtreme Verge, we deliver innovative software solutions
+              tailored to<br /> meet your business needs.
+            </p>
+            <div className="mt-14 space-x-4 action-buttons-wrapper flex items-center justify-center">
+              <div className="action-buttons flex gap-4">
+                <button className="relative px-3 py-2 text-xl text-white border rounded border-blue-200 font-bold hover:-translate-y-1 transition-all duration-300 ease-in-out hover:shadow-[inset_-3.6em_0_0_0_theme(colors.blue.700),inset_3.5em_0_0_0_theme(colors.blue.700)] focus:shadow-[inset_-3.6em_0_0_0_theme(colors.red.700),inset_3.5em_0_0_0_theme(colors.red.700)]">
+                  Get started
+                </button>
+
+                <button className="relative px-3 py-2 text-xl text-white border rounded border-red-200 font-bold hover:-translate-y-1 transition-all duration-300 ease-in-out hover:shadow-[inset_-3.6em_0_0_0_theme(colors.red.700),inset_3.5em_0_0_0_theme(colors.red.700)] focus:shadow-[inset_-3.6em_0_0_0_theme(colors.red.700),inset_3.5em_0_0_0_theme(colors.red.700)]">
+                  Learn More
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
       <Fade direction="up" triggerOnce duration={1000}>
-        <div className="bg-black w-full mt-20 overflow-x-hidden">
+        <section className="bg-black w-full overflow-x-hidden">
           <div className="text-white max-w-[85%] mx-auto py-20">
             <div className="text-center">
               <Fade direction="down" triggerOnce duration={1000}>
@@ -125,7 +155,7 @@ export default function AboutUs() {
               </div>
             </div>
           </div>
-        </div>
+        </section>
       </Fade>
       <div className="bg-gradient-to-r from-gray-50 to-gray-100 w-full">
         <div className="text-black max-w-[85%] mx-auto py-20">
@@ -447,7 +477,7 @@ export default function AboutUs() {
         <div className="h-[150px] lg:h-[60px]"></div>
       </section>
       <div className="h-[115px] lg:h-[60px]"></div>
-      <Subscribe/>
+      <Subscribe />
     </>
   );
 }

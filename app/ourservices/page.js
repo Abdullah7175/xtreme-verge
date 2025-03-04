@@ -64,34 +64,34 @@ export default function Services() {
     const card = e.currentTarget;
     const cardClone = card.cloneNode(true);
     const { top, left, width, height } = card.getBoundingClientRect();
-  
+
     // Extract gradient class from the original card
     const gradientClass = card.classList.value.split(" ").find(cls => cls.startsWith("from-"));
-  
+
     // Extract service details
     const title = card.querySelector("h2")?.innerText || "";
     const description = card.querySelector("p")?.innerText || "";
     const iconHTML = card.querySelector("div.text-6xl")?.innerHTML || "";
-  
+
     cardClone.style.position = "fixed";
     cardClone.style.top = top + "px";
     cardClone.style.left = left + "px";
     cardClone.style.width = width + "px";
     cardClone.style.height = height + "px";
     card.style.opacity = "0";
-  
+
     document.body.appendChild(cardClone);
-  
+
     // Wait for expansion animation
     await toggleExpansion(cardClone, { top: "0px", left: "0px", width: "100vw", height: "100vh" });
-  
+
     // Apply dynamic gradient and styles
     cardClone.classList.add("bg-gradient-to-br", gradientClass);
     cardClone.style.zIndex = "50";
     cardClone.style.overflow = "auto";
     cardClone.style.padding = "40px";
     cardClone.style.borderRadius = "0px";
-  
+
     // Clear old content and add new content
     cardClone.innerHTML = `
       <div class="flex flex-col items-center text-center h-full justify-center p-8">
@@ -100,7 +100,7 @@ export default function Services() {
         <p class="text-lg text-gray-200 max-w-2xl">${description}</p>
       </div>
     `;
-  
+
     // Create and add close button
     const closeButton = document.createElement("button");
     closeButton.innerText = "X";
@@ -121,22 +121,22 @@ export default function Services() {
       border: none;
       cursor: pointer;
     `;
-  
+
     closeButton.addEventListener("click", async () => {
       closeButton.remove();
       cardClone.style.removeProperty("display");
       cardClone.style.removeProperty("padding");
-  
+
       await toggleExpansion(cardClone, { top: `${top}px`, left: `${left}px`, width: `${width}px`, height: `${height}px` }, 300);
-  
+
       card.style.removeProperty("opacity");
       cardClone.remove();
     });
-  
+
     cardClone.appendChild(closeButton);
   };
-  
-  
+
+
   const services = [
     { title: "Custom Software Development", description: "Tailored solutions to drive your business forward.", icon: <FaCode />, gradient: "from-orange-400 to-red-500" },
     { title: "Web & Mobile Apps", description: "Seamless user experiences for every platform.", icon: <FaMobileAlt />, gradient: "from-green-400 to-blue-500" },
@@ -148,11 +148,41 @@ export default function Services() {
     { title: "Database Management", description: "Efficient and reliable data storage solutions.", icon: <FaDatabase />, gradient: "from-indigo-400 to-blue-500" },
     { title: "Social Media", description: "Engage with your audience effectively.", icon: <FcClapperboard />, gradient: "from-pink-400 to-red-500" },
   ];
- 
-  
+
+
   return (
     <>
-      {loading && <Loader />}
+      {loading && <Loader />}  {/* Use the Loader component */}
+
+      <section
+        className={`relative h-screen transition-opacity duration-700 bg-[url('https://devsaidul.com/html3/new/assets/images/home-1/banner.png')] bg-cover text-white flex justify-center items-center`}
+      >
+        <div className="absolute inset-0 bg-black/50 z-0"></div>
+
+        {/* Content (Ensures text and images are above overlay) */}
+        <div className="relative z-[1] max-w-[75%] m-20 mx-auto flex items-center justify-center text-center">
+          <div className="w-[85%]">
+            <h2 className="text-[8vh] font-bold">
+              Services we provide
+            </h2>
+            <p className="mt-6 text-[3.5vh] ">
+              At Xtreme Verge, we deliver innovative software solutions
+              tailored to<br /> meet your business needs.
+            </p>
+            <div className="mt-14 space-x-4 action-buttons-wrapper flex items-center justify-center">
+              <div className="action-buttons flex gap-4">
+                <button className="relative px-3 py-2 text-xl text-white border rounded border-blue-200 font-bold hover:-translate-y-1 transition-all duration-300 ease-in-out hover:shadow-[inset_-3.6em_0_0_0_theme(colors.blue.700),inset_3.5em_0_0_0_theme(colors.blue.700)] focus:shadow-[inset_-3.6em_0_0_0_theme(colors.red.700),inset_3.5em_0_0_0_theme(colors.red.700)]">
+                  Get started
+                </button>
+
+                <button className="relative px-3 py-2 text-xl text-white border rounded border-red-200 font-bold hover:-translate-y-1 transition-all duration-300 ease-in-out hover:shadow-[inset_-3.6em_0_0_0_theme(colors.red.700),inset_3.5em_0_0_0_theme(colors.red.700)] focus:shadow-[inset_-3.6em_0_0_0_theme(colors.red.700),inset_3.5em_0_0_0_theme(colors.red.700)]">
+                  Learn More
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
       <div className="w-full py-12 mt-20">
         <div className="text-gray-900 max-w-[90%] mx-auto">
           <header className="text-center mb-10">
