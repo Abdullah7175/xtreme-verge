@@ -89,7 +89,11 @@ const Navbar = () => {
               ))}
             </ul>
           </nav>
-          <div className="cs_toolbox">
+          <div className={`cs_toolbox ${
+                      isScrolled
+                          ? "text-black"
+                          : "text-white"
+                    }`}>
             <span className="cs_icon_btn" onClick={() => setIsOpen(!isOpen)}>
               <span className="cs_icon_btn_in">
                 <span></span>

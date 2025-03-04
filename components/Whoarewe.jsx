@@ -89,7 +89,7 @@ const Whoarewe = () => {
                 },
                 {
                   title: "Our Vision",
-                  desc: "Our vision is to be a trusted leader in software solutions, setting the standard for innovative technology and exceptional service. We empower businesses to thrive by crafting tailored, high-performance software that meets their unique needs.",
+                  desc: "Our vision is to be a trusted leader in software solutions, setting the standard for innovative technology .",
                 },
               ].map((item, index) => (
                 <div key={index} className=" rounded-lg text-xl pb-6">
