@@ -76,7 +76,7 @@ const Footer = () => {
         </ul>
       </div>
       <div className="border-t border-[#383838] py-8 text-center text-md">
-        <div className="container mx-auto">
+        <div className="mx-auto">
           <CopyRight />
         </div>
       </div>

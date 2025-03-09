@@ -7,17 +7,17 @@ import { X } from "lucide-react";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false); // ✅ Track scroll for background change
+  const [isScrolled, setIsScrolled] = useState(false);
   const menuRef = useRef(null);
   const linksRef = useRef([]);
-  const pathname = usePathname(); // ✅ Get current route
+  const pathname = usePathname(); 
 
-  // ✅ Close menu on route change
+ 
   useEffect(() => {
     setIsOpen(false);
   }, [pathname]);
 
-  // ✅ GSAP animation for menu
+
   useEffect(() => {
     if (isOpen) {
       gsap.to(menuRef.current, {
@@ -76,10 +76,10 @@ const Navbar = () => {
                       isScrolled
                         ? pathname === loop.href
                           ? "text-red-500"
-                          : "text-black"
+                          : "text-black hover:text-red-500"
                         : pathname === loop.href
                         ? "text-red-500"
-                        : "text-white"
+                        : "text-white hover:text-red-500"
                     }`}
                     onClick={() => setIsOpen(false)}
                   >
@@ -91,8 +91,8 @@ const Navbar = () => {
           </nav>
           <div className={`cs_toolbox ${
                       isScrolled
-                          ? "text-black"
-                          : "text-white"
+                          ? "text-black hover:text-red-500"
+                          : "text-white hover:text-red-500"
                     }`}>
             <span className="cs_icon_btn" onClick={() => setIsOpen(!isOpen)}>
               <span className="cs_icon_btn_in">

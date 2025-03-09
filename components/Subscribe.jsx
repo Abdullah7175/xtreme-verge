@@ -7,8 +7,8 @@ const Subscribe = () => {
   }
   return (
    <>
-   <section className="relative bg-black overflow-hidden max-w-[85%] mx-auto py-14 my-10">
-        <div className="absolute top-10 left-10 pointer-events-none">
+   <section className="relative bg-black overflow-hidden max-w-[85%] mx-auto py-14 my-10 rounded-xl">
+        <div className="absolute top-8 left-10 pointer-events-none">
           <svg
             width="149"
             height="150"
@@ -54,7 +54,7 @@ const Subscribe = () => {
         {/* Top Spacer */}
         <div className="h-[150px] lg:h-[60px]"></div>
 
-        <div className="container mx-auto px-6 lg:px-20 relative">
+        <div className="mx-auto px-6 lg:px-20 relative">
           {/* Section Heading */}
           <div className="text-center">
             <div className="mb-4">

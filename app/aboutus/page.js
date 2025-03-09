@@ -14,6 +14,7 @@ import avatar_img from "@/public/avatar_1.jpg";
 import testimonial_thumb from "@/public/testimonial_thumb_1.jpg";
 import Subscribe from "@/components/Subscribe";
 
+
 export default function AboutUs() {
   const [loading, setLoading] = useState(true);
 
@@ -124,7 +125,7 @@ export default function AboutUs() {
                 </Fade>
               </div>
               <div className="flex-1 text-gray-400 font-bold text-lg">
-                <Fade direction="right" triggerOnce duration={1200}>
+                <Fade direction="right" triggerOnce duration={1000}>
                   <p className="mb-2">
                     At Xtreme Verge, we strive to push boundaries and create
                     future-ready solutions. Delivering top-notch software

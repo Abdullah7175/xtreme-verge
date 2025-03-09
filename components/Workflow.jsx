@@ -56,6 +56,7 @@ const WorkFlow = () => {
           </Fade>
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+          <Fade direction="left" triggerOnce duration={600}>
           <div className="sticky space-y-8 pb-[200px]">
             {Process.map((process, index) => (
               <div
@@ -82,8 +83,9 @@ const WorkFlow = () => {
               </div>
             ))}
           </div>
+          </Fade>
           <div className="flex sticky top-[160px] mb-24">
-            <Fade direction="right" triggerOnce duration={1200}>
+            <Fade direction="right" triggerOnce duration={600}>
               <div className="relative w-full max-w-lg ml-auto">
                 <Image
                   src="/illustration.png"

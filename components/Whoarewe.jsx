@@ -12,7 +12,7 @@ const Whoarewe = () => {
   return (
     <section
       id="about"
-      className="px-4 md:px-20 lg:px-40 py-24 bg-gradient-to-r from-gray-50 to-gray-100"
+      className="px-4 md:px-20 lg:px-40 pt-24 bg-gradient-to-r from-gray-50 to-gray-100"
     >
       <div className="container mx-auto">
         {/* Centered Title */}

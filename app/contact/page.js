@@ -32,7 +32,6 @@ export default function ContactUs() {
         "-=0.8"
       );
 
-    // Process the animated header text if it exists
 
   }, []);
 
@@ -76,7 +75,6 @@ export default function ContactUs() {
               <Fade direction="up" triggerOnce duration={1500} delay={2}>
               <h1 className="text-start text-8xl font-black mt-5 mb-10">Get in <br/>Touch</h1>
               </Fade>
-              <Fade direction="left" triggerOnce duration={1500} delay={3}>
               <form>
                 <div className="grid grid-cols-2 items-center gap-8 mt-10">
                   <div className="relative">
@@ -141,7 +139,6 @@ export default function ContactUs() {
                   </div>
                   <div>
                   </div>
-                  <Fade direction="up" triggerOnce duration={1500} delay={9}>
                   <div className="flex items-end justify-end">
                   <button
                     type="submit"
@@ -155,20 +152,17 @@ export default function ContactUs() {
                     Send Message
                   </button>
                   </div>
-                  </Fade>
                 </div>
-              </form>
-              </Fade>
+             </form>     
             </div>
             <div className="w-1/2 mt-16">
-            <Fade direction="right" triggerOnce duration={1500} delay={3}>
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.8354345093747!2d144.95373531531615!3d-37.816279742021665!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0xf577d6a32f7f1f8e!2sMelbourne%20VIC%2C%20Australia!5e0!3m2!1sen!2sus!4v1625063004479!5m2!1sen!2sus"
                 width="100%"
                 height="500"
                 style={{ border: 0 }}
                 allowFullScreen
-                loading="lazy"
+                loading="eager"
                 className=""
               />
               <div className="grid grid-cols-3 mt-10">
@@ -194,7 +188,6 @@ export default function ContactUs() {
                   <p className="text-lg">info@xv.com</p>
                 </div>
               </div>
-              </Fade>
             </div>
           </div>
         </div>

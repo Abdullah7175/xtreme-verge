@@ -1,77 +1,162 @@
-"use client";
-import React, { useState } from "react";
-import { Tilt } from "react-tilt";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Autoplay } from "swiper/modules";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-import { FaCode, FaMobileAlt, FaCloud, FaCogs, FaChartLine, FaShieldAlt, FaDatabase, FaRobot } from "react-icons/fa";
-import { FcClapperboard } from "react-icons/fc";
+// "use client";
+// import { useEffect, useRef, useState } from "react";
+// import { Canvas, useThree } from "@react-three/fiber";
+// import { TextureLoader, LinearFilter } from "three";
+// import avatar_img from "@/public/avatar_1.jpg";
+// import gsap from "gsap";
+// import Image from "next/image";
 
-export default function Services() {
-  const [hoveredIndex, setHoveredIndex] = useState(null);
+// // Image Data
+// const slides = [
+//   { image: "/leopard2.jpg", title: "Amur <br> Leopard", status: "Critically Endangered" },
+//   { image: "/AI.jpg", title: "Asiatic <br> Lion", status: "Endangered" },
+//   { image: "/leopard2.jpg", title: "Siberian <br> Tiger", status: "Endangered" },
+//   { image: "/bear2.jpg", title: "Brown <br> Bear", status: "Least Concern" },
+// ];
 
-  const services = [
-    { title: "Custom Software Development", description: "Tailored solutions to drive your business forward.", icon: <FaCode />, gradient: "from-orange-400 to-red-500" },
-    { title: "Web & Mobile Apps", description: "Seamless user experiences for every platform.", icon: <FaMobileAlt />, gradient: "from-green-400 to-blue-500" },
-    { title: "Cloud Solutions", description: "Scalable and secure cloud-based infrastructure.", icon: <FaCloud />, gradient: "from-purple-400 to-pink-500" },
-    { title: "AI & Machine Learning", description: "Intelligent systems to automate and optimize processes.", icon: <FaRobot />, gradient: "from-yellow-400 to-orange-500" },
-    { title: "Data Analytics", description: "Actionable insights from your business data.", icon: <FaChartLine />, gradient: "from-red-400 to-purple-500" },
-    { title: "Cybersecurity", description: "Protect your business from digital threats.", icon: <FaShieldAlt />, gradient: "from-blue-400 to-indigo-500" },
-    { title: "DevOps & Automation", description: "Streamline development and operations workflows.", icon: <FaCogs />, gradient: "from-teal-400 to-green-500" },
-    { title: "Database Management", description: "Efficient and reliable data storage solutions.", icon: <FaDatabase />, gradient: "from-indigo-400 to-blue-500" },
-    { title: "Social Media", description: "Engage with your audience effectively.", icon: <FcClapperboard />, gradient: "from-pink-400 to-red-500" },
-  ];
+// const vertexShader = `
+//   varying vec2 vUv;
+//   void main() {
+//     vUv = uv;
+//     gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+//   }
+// `;
 
+// const fragmentShader = `
+//   varying vec2 vUv;
+//   uniform sampler2D currentImage;
+//   uniform sampler2D nextImage;
+//   uniform float dispFactor;
+
+//   void main() {
+//     vec2 uv = vUv;
+//     vec4 _currentImage = texture2D(currentImage, uv);
+//     vec4 _nextImage = texture2D(nextImage, uv);
+//     vec4 finalTexture = mix(_currentImage, _nextImage, dispFactor);
+//     gl_FragColor = finalTexture;
+//   }
+// `;
+
+// const DisplacementSlider = () => {
+//   const [textures, setTextures] = useState([]);
+//   const [currentIndex, setCurrentIndex] = useState(0);
+//   const sliderRef = useRef();
+//   const titleRef = useRef();
+//   const statusRef = useRef();
+
+//   // Load Images
+//   useEffect(() => {
+//     const loader = new TextureLoader();
+//     const loadedTextures = slides.map((slide) => {
+//       const texture = loader.load(slide.image);
+//       texture.magFilter = texture.minFilter = LinearFilter;
+//       return texture;
+//     });
+//     setTextures(loadedTextures);
+//   }, []);
+
+//   const handleSlideChange = (index) => {
+//     if (sliderRef.current && textures.length > 0) {
+//       const material = sliderRef.current.material;
+  
+//       // Animate displacement transition
+//       gsap.to(material.uniforms.dispFactor, {
+//         value: 1,
+//         duration: 1,
+//         ease: "expo.inOut",
+//         onComplete: () => {
+//           // Force texture update and reset displacement
+//           material.uniforms.currentImage.value = textures[index];
+//           material.uniforms.nextImage.value = textures[(index + 1) % textures.length]; // Update next image
+//           material.uniforms.dispFactor.value = 0; // Reset displacement
+//           setCurrentIndex(index);
+//         },
+//       });
+  
+//       // Animate text change
+//       gsap.to(titleRef.current, {
+//         opacity: 0,
+//         y: -20,
+//         duration: 0.5,
+//         onComplete: () => {
+//           titleRef.current.innerHTML = slides[index].title;
+//           gsap.to(titleRef.current, { opacity: 1, y: 0, duration: 0.5 });
+//         },
+//       });
+  
+//       gsap.to(statusRef.current, {
+//         opacity: 0,
+//         y: 10,
+//         duration: 0.5,
+//         onComplete: () => {
+//           statusRef.current.innerText = slides[index].status;
+//           gsap.to(statusRef.current, { opacity: 1, y: 0, duration: 0.5 });
+//         },
+//       });
+//     }
+//   };
+  
+
+//   return (
+//     <div className="relative w-full h-screen bg-gray-900 flex items-center justify-center font-karla">
+//       {/* Three.js Canvas */}
+//       <Canvas className="absolute w-full h-full">
+//         {textures.length > 1 && (
+//           <mesh ref={sliderRef}>
+//             <planeGeometry args={[2, 2]} />
+//             <shaderMaterial
+//               uniforms={{
+//                 dispFactor: { value: 0 },
+//                 currentImage: { value: textures[currentIndex] },
+//                 nextImage: { value: textures[(currentIndex + 1) % textures.length] },
+//               }}
+//               vertexShader={vertexShader}
+//               fragmentShader={fragmentShader}
+//               transparent={true}
+//             />
+//           </mesh>
+//         )}
+//       </Canvas>
+
+//       {/* Text Overlay */}
+//       <div className="absolute text-white text-center top-1/4 w-full px-6">
+//         <div className="text-lg uppercase opacity-70">Species</div>
+//         <h2
+//           ref={titleRef}
+//           className="text-6xl font-bold leading-tight"
+//           dangerouslySetInnerHTML={{ __html: slides[currentIndex].title }}
+//         />
+//         <div className="text-lg uppercase mt-4 opacity-70">Status</div>
+//         <div ref={statusRef} className="text-2xl font-medium mt-2">
+//           {slides[currentIndex].status}
+//         </div>
+//       </div>
+
+//       {/* Pagination Buttons */}
+//       <div className="absolute bottom-10 flex gap-3">
+//         {slides.map((_, index) => (
+//           <button
+//             key={index}
+//             onClick={() => handleSlideChange(index)}
+//             className={`w-4 h-4 rounded-full transition-all ${
+//               currentIndex === index ? "bg-white scale-125" : "bg-gray-500"
+//             }`}
+//           />
+//         ))}
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default DisplacementSlider;
+import React from 'react'
+
+const Services = () => {
   return (
-    <div className="relative overflow-visible py-10">
-      <div className="text-gray-900 max-w-[50%] mx-auto overflow-visible">
-        {/* Header Section */}
-        <header className="text-center mb-10">
-          <h1 className="text-4xl font-bold">Our Services</h1>
-        </header>
-
-        {/* Swiper Slider */}
-        <Swiper
-          modules={[Navigation, Pagination, Autoplay]}
-          slidesPerView={1}
-          spaceBetween={30}
-          breakpoints={{
-            640: { slidesPerView: 1 },
-            768: { slidesPerView: 2 },
-            1024: { slidesPerView: 3 },
-          }}
-          navigation
-          pagination={{ clickable: true }}
-          autoplay={{ delay: 3000, disableOnInteraction: false }}
-          className="overflow-visible pb-12"
-        >
-          {services.map((service, index) => (
-            <SwiperSlide key={index} className="max-w-[350px] overflow-visible py-8">
-              <Tilt
-                options={{ max: 15, scale: 1.05, speed: 500 }}
-                className={`h-[600px] p-6 rounded-lg shadow-lg transition-all duration-300 relative bg-gradient-to-br ${service.gradient} bg-opacity-100 hover:scale-110`}
-                onMouseEnter={() => setHoveredIndex(index)}
-                onMouseLeave={() => setHoveredIndex(null)}
-              >
-                <div className="flex flex-col items-center text-center h-full justify-center">
-                  {/* Icon */}
-                  <div className={`text-6xl mb-4 transition-transform duration-300 ${hoveredIndex === index ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-80'}`}>
-                    {service.icon}
-                  </div>
-                  {/* Title */}
-                  <h2 className="text-2xl font-bold mb-2">{service.title}</h2>
-                  {/* Description */}
-                  <p className={`text-gray-700 transition-opacity duration-300 ${hoveredIndex === index ? 'opacity-100' : 'opacity-80'}`}>
-                    {service.description}
-                  </p>
-                </div>
-              </Tilt>
-            </SwiperSlide>
-          ))}
-        </Swiper>
-      </div>
+    <div>
+      
     </div>
-  );
+  )
 }
+
+export default Services

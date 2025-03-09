@@ -6,15 +6,14 @@ import Services from "@/components/Services";
 import Counter from "@/components/Counter";
 import Slider from "@/components/Slider";
 import Subscribe from "@/components/Subscribe";
-
 export default function Home() {
  
 
   return (
     <>
       <Main/>
-      <Whoarewe />
       <Slider />
+      <Whoarewe />
       <Services/>
       <WorkFlow />
       <Counter />

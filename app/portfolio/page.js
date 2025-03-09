@@ -35,7 +35,7 @@ const page = () => {
       {loading && <Loader />}  {/* Use the Loader component */}
 
       <section
-        className={`relative h-screen transition-opacity duration-700 bg-[url('https://img.freepik.com/free-photo/people-working-call-center_23-2149288184.jpg?t=st=1741127066~exp=1741130666~hmac=477cd1567bfc9e1149dcb915e416bbc3053c76169e91882ba6d93f4e2f63cd6e&w=1380')] bg-cover text-white flex justify-center items-center`}
+        className={`relative h-screen transition-opacity duration-700 bg-[url('https://img.freepik.com/free-photo/group-diverse-people-brainstorming-together_53876-31193.jpg?t=st=1741224262~exp=1741227862~hmac=a00533cc975f09fa50382702bab6b98fd3c3f5e1420238e1e12a6e7d3dcffb2f&w=1380')] bg-cover text-white flex justify-center items-center`}
       >
         <div className="absolute inset-0 bg-black/50 z-0"></div>
 
