@@ -158,7 +158,7 @@ import Image from 'next/image';
 // Data for multiple cards
 const cardsData = [
   {
-    title: "Osaka",
+    title: "Python",
     image: "https://assets.codepen.io/605876/do-not-copy-osaka-sky.jpeg",
     subImage: "https://assets.codepen.io/605876/do-not-copy-osaka-tower.png",
     description: "Osaka, Japan",

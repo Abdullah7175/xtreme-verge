@@ -109,13 +109,13 @@ const Navbar = () => {
               isOpen ? "h-screen" : "h-0"
             }`}
           >
-            <div className="p-20 flex flex-row-reverse justify-between w-[90%] mx-auto">
+            <div className="p-10 flex flex-row-reverse justify-between w-[90%] mx-auto">
               <div>
                 <button
                   onClick={() => setIsOpen(false)}
-                  className="text-black opacity-100 transform translate-x-8 transition-all duration-300 rounded-full border border-white p-1"
+                  className="text-black font-bold opacity-100 transform mr-8 hover:-translate-y-1 -mt-2 translate-x-8 transition-all duration-300 rounded-full border-white p-2 border-2"
                 >
-                  <X color="white" />
+                  <X color="white" strokeWidth={3}/>
                 </button>
               </div>
               <div className="text-white">
